@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gita – Observabilidade Kubernetes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=InterTight:wght@300;400;500;600;700;800&display=swap"/>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#0b0f19] text-gray-800 relative">
+  <header class="shadow-sm absolute top-0 left-0 right-0 m-auto">
+    <div class="px-[8%] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex flex-1">
+          <a href="#" class="text-2xl font-bold text-indigo-600">
+            <img src="img/logo-gita-white.svg" width="120"/>
+          </a>
+        </div>
+  
+        <!-- Navegação -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="#inicio" class="gita-menu-item">Início</a>
+          <a href="#sobre" class="gita-menu-item">O que é o Gita</a>
+          <a href="#preco" class="gita-menu-item">Preço</a>
+          <a href="#recursos" class="gita-menu-item">Contato</a>
+          <a href="#contato" class="gita-menu-item">Documentação</a>
+        </nav>
+  
+        <!-- Ações -->
+        <div class="flex flex-1 items-center justify-end space-x-4">
+          <!-- Dropdown de Idioma -->
+          <div class="relative inline-block text-left">
+            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center w-full rounded-md shadow-sm px-3 py-1 bg-transparent text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffffb3"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"/></svg>
+              Idioma
+              <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.25 4.65a.75.75 0 01-1.08 0l-4.25-4.65a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+
+            <div id="langMenu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
+              <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="langButton">
+                <button data-lang="pt" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">🇧🇷 Português</button>
+                <button data-lang="en" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">🇺🇸 English</button>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://app.gita.cloud/" target="_blank" class="gita-button gita-button__secondary">
+            Login
+          </a>
+  
+          <!-- CTA -->
+          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary">
+            Começar Agora
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+  <!-- Hero Section -->
+  <header class="flex flex-row min-h-[600px] pt-[120px] pb-[70px] px-[4%] gap-4" style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
+    <div class="flex flex-col justify-center flex-1 mx-auto px-4 text-left gap-3">
+      <!-- Mascote da girafa -->
+      <h1 class="text-4xl font-bold font-[sora] leading-[0.9em] mb-4 text-white text-[72px]">Acompanhe os eventos dos seus clusters Kubernetes</h1>
+      <h3>
+        <span id="dynamicText" class="typewriter"></span><span class="cursor">|</span>
+      </h3>
+
+      <div class="flex flex-row gap-4 items-center">
+        <a href="#comecar" class="gita-button gita-button-lg gita-button__primary">Começar Agora</a>
+        <a href="https://app.gita.cloud/" target="_blank" class="gita-button gita-button-lg gita-button__transparent">
+          Saiba mais
+        </a>
+      </div>
+    </div>
+    <div class="flex flex-col flex-1 items-center justify-center">
+      <img src="img/dalle.png" alt="Mascote Girafa" height="500" />
+    </div>
+  </header>
+
+  <!-- Seção: O que é o GITA -->
+  <section id="sobre" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold mb-4">O que é o GITA?</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          GITA é um gerenciador de Kubernetes baseado em boas práticas. Com ele, você consegue ver quais melhorias podem ser feitas nas suas cargas de trabalho (workloads), além de acompanhar eventos, alertas e incidentes em tempo real.
+        </p>
+      </div>
+      <!-- Adicione aqui mais detalhes ou imagens ilustrativas -->
+    </div>
+  </section>
+
+  <!-- Seção: Recursos -->
+  <section id="recursos" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold mb-4">Recursos</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Obtenha insights detalhados sobre os recursos do Kubernetes, monitore a integridade do cluster e receba alertas personalizados para garantir a estabilidade do seu ambiente.
+        </p>
+      </div>
+      <!-- Adicione aqui cards ou ícones representando os recursos -->
+    </div>
+  </section>
+
+  <!-- Seção: Preço -->
+  <section id="preco" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold mb-4">Preço</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Teste gratuito por 15 dias. Escolha entre as opções SaaS na nuvem ou Self-Hosted com suporte premium 24/7.
+        </p>
+      </div>
+      <!-- Adicione aqui tabelas ou cards de preços -->
+    </div>
+  </section>
+
+  <!-- Seção: Contato -->
+  <section id="contato" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold mb-4">Contato</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Estamos ansiosos para ouvir de você! Entre em contato conosco para qualquer dúvida, comentário ou consulta.
+        </p>
+      </div>
+      <!-- Adicione aqui um formulário de contato ou informações de contato -->
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2025 JackExperts. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Seletor de idioma -->
+  <script>
+    const langButton = document.getElementById("langButton");
+    const langMenu = document.getElementById("langMenu");
+  
+    langButton.addEventListener("click", () => {
+      langMenu.classList.toggle("hidden");
+    });
+  
+    document.addEventListener("click", (e) => {
+      if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+        langMenu.classList.add("hidden");
+      }
+    });
+  
+    document.querySelectorAll('[data-lang]').forEach(button => {
+      button.addEventListener('click', () => {
+        const selectedLang = button.getAttribute('data-lang');
+        console.log("Idioma selecionado:", selectedLang);
+        langMenu.classList.add("hidden");
+      });
+    });
+  </script>
+
+  <!-- Title rotator -->
+  <script>
+    const texts = [
+      "Monitoramento de Clusters Kubernetes",
+      "Alertas em Tempo Real",
+      "Multicloud e Multicluster",
+      "Observabilidade sem Complicações"
+    ];
+  
+    let textIndex = 0;
+    let charIndex = 0;
+    const typingSpeed = 75; // milissegundos entre cada caractere
+    const waitTime = 1500;  // tempo para trocar a frase
+    const dynamicText = document.getElementById('dynamicText');
+  
+    function typeWriter() {
+      const currentText = texts[textIndex];
+      if (charIndex < currentText.length) {
+        dynamicText.textContent += currentText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, typingSpeed);
+      } else {
+        setTimeout(() => {
+          dynamicText.textContent = "";
+          charIndex = 0;
+          textIndex = (textIndex + 1) % texts.length;
+          typeWriter();
+        }, waitTime);
+      }
+    }
+  
+    typeWriter();
+  </script>
+  
+</body>
+</html>
