@@ -103,6 +103,14 @@
     line-height: 1.6;
     transition: all 0.15s ease;
     width: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .gita-button svg {
+    margin-left: -12px;
   }
 
   .gita-button.gita-button-lg {
@@ -119,6 +127,28 @@
 
   .gita-button.gita-button__primary:hover {
     background: var(--primary-lighter);
+    box-shadow: 0 .5rem 1.125rem -.5rem rgb(255, 197, 22, 0.24);
+  }
+
+  .gita-button.gita-button__black {
+    background: var(--black);
+    color: var(--white);
+    box-shadow: 0 .5rem 1.125rem -.5rem rgb(255, 197, 22, 0.08);
+  }
+
+  .gita-button.gita-button__black:hover {
+    background: var(--background-body);
+    box-shadow: 0 .5rem 1.125rem -.5rem rgb(255, 197, 22, 0.24);
+  }
+
+  .gita-button.gita-button__white {
+    background: var(--white);
+    color: var(--black);
+    box-shadow: 0 .5rem 1.125rem -.5rem rgb(255, 197, 22, 0.08);
+  }
+
+  .gita-button.gita-button__white:hover {
+    background: #f9f5fa;
     box-shadow: 0 .5rem 1.125rem -.5rem rgb(255, 197, 22, 0.24);
   }
 
@@ -157,10 +187,12 @@
 
   /* Title rotator */
   .typewriter {
-    font-family: monospace;
+    font-family: 'Sora', monospace, sans-serif;
+    font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 28px;
+    font-size: 48px;
+    line-height: 48px;
     color: var(--primary);
   }
   

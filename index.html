@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gita – Observabilidade Kubernetes</title>
+  <title data-i18n="site.title">Gita – Observabilidade Kubernetes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=InterTight:wght@300;400;500;600;700;800&display=swap"/>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Ícones -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-[#0b0f19] text-gray-800 relative">
+
+  <!-- Navbar -->
   <header class="shadow-sm absolute top-0 left-0 right-0 m-auto">
     <div class="px-[8%] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-16 space-x-6">
         <!-- Logo -->
         <div class="flex flex-1">
           <a href="#" class="text-2xl font-bold text-indigo-600">
@@ -24,39 +29,37 @@
   
         <!-- Navegação -->
         <nav class="hidden md:flex space-x-6">
-          <a href="#inicio" class="gita-menu-item">Início</a>
-          <a href="#sobre" class="gita-menu-item">O que é o Gita</a>
-          <a href="#preco" class="gita-menu-item">Preço</a>
-          <a href="#recursos" class="gita-menu-item">Contato</a>
-          <a href="#contato" class="gita-menu-item">Documentação</a>
+          <a href="#home" class="gita-menu-item" data-i18n="menu.home"></a>
+          <a href="#about" class="gita-menu-item" data-i18n="menu.about"></a>
+          <a href="#pricing" class="gita-menu-item" data-i18n="menu.pricing"></a>
+          <a href="#contact" class="gita-menu-item" data-i18n="menu.contact"></a>
+          <a href="#docs" class="gita-menu-item" data-i18n="menu.docs"></a>
         </nav>
   
         <!-- Ações -->
         <div class="flex flex-1 items-center justify-end space-x-4">
           <!-- Dropdown de Idioma -->
           <div class="relative inline-block text-left">
-            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center w-full rounded-md shadow-sm px-3 py-1 bg-transparent text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffffb3"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"/></svg>
-              Idioma
-              <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.25 4.65a.75.75 0 01-1.08 0l-4.25-4.65a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-              </svg>
+            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center w-full rounded-md shadow-sm px-2 py-1 bg-transparent text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
+              <i data-lucide="globe" class="h-4 w-4"></i>
+              <span id="langButtonSpan" class="uppercase">PT</span>
+              <i data-lucide="chevron-down" class="h-4 w-4"></i>
             </button>
 
             <div id="langMenu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
               <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="langButton">
-                <button data-lang="pt" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">🇧🇷 Português</button>
-                <button data-lang="en" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">🇺🇸 English</button>
+                <button onclick="setLanguage('pt')" data-lang="pt" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
+                <button onclick="setLanguage('en')" data-lang="en" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>
               </div>
             </div>
           </div>
 
-          <a href="https://app.gita.cloud/" target="_blank" class="gita-button gita-button__secondary">
+          <a href="https://app.gita.cloud/" target="_blank" class="gita-button gita-button__secondary" data-i18n="menu.login">
             Login
           </a>
   
           <!-- CTA -->
-          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary">
+          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary" data-i18n="menu.signup">
             Começar Agora
           </a>
         </div>
@@ -66,77 +69,145 @@
 
   
   <!-- Hero Section -->
-  <header class="flex flex-row min-h-[600px] pt-[120px] pb-[70px] px-[4%] gap-4" style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
-    <div class="flex flex-col justify-center flex-1 mx-auto px-4 text-left gap-3">
-      <!-- Mascote da girafa -->
-      <h1 class="text-4xl font-bold font-[sora] leading-[0.9em] mb-4 text-white text-[72px]">Acompanhe os eventos dos seus clusters Kubernetes</h1>
-      <h3>
-        <span id="dynamicText" class="typewriter"></span><span class="cursor">|</span>
-      </h3>
+  <div style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
+    <header id="home" class="flex flex-row min-h-[600px] pt-[120px] pb-[70px] px-[4%] gap-4">
+      <div class="flex flex-col justify-center flex-1 mx-auto px-4 text-left gap-3">
+        <!-- Mascote da girafa -->
+        <div class="flex flex-col gap-0">
+          <h1 class="font-bold font-[sora] leading-[0.9em] mb-0 text-white text-[48px]" data-i18n="hero.title_part1">Acompanhe</h1>
+          <h1 class="mb-0">
+            <span id="dynamicText" class="typewriter"></span><span class="cursor">|</span>
+          </h1>
+          <h1 class="font-bold font-[sora] leading-[0.9em] mb-4 text-white text-[48px]" data-i18n="hero.title_part2">dos seus clusters Kubernetes</h1>
+        </div>
+        <p class="text-slate-300 text-xl" data-i18n="hero.subtitle">Obtenha uma visão horizontal de todos os clusters Kubernetes em um só lugar</p>
+        <p class="text-slate-300" data-i18n="hero.multicluster_multicloud">Multicluster | Multicloud</p>
 
-      <div class="flex flex-row gap-4 items-center">
-        <a href="#comecar" class="gita-button gita-button-lg gita-button__primary">Começar Agora</a>
-        <a href="https://app.gita.cloud/" target="_blank" class="gita-button gita-button-lg gita-button__transparent">
-          Saiba mais
-        </a>
+        <div class="flex flex-row gap-4 items-center mt-6">
+          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button-lg gita-button__primary">
+            <span data-i18n="hero.cta_start">Começar Agora</span>
+          </a>
+          <a href="#about" target="_blank" class="gita-button gita-button-lg gita-button__transparent">
+            <i data-lucide="move-down" class="h-6 w-6"></i>
+            <span data-i18n="hero.cta_learn_more">
+              Saiba mais
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col flex-1 items-center justify-center">
+        <img src="img/dalle.png" alt="Mascote Girafa" height="500" />
+      </div>
+    </header>
+
+    <!-- Seção: O que é o GITA -->
+    <!-- Seção 2: O que é o GITA? -->
+    <div id="#about" class="py-[70px] text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-gray-100" data-i18n="about.title">
+            Visibilidade Total do seu Ambiente Kubernetes
+          </h2>
+          <p class="mt-4 text-lg text-gray-300" data-i18n="about.description">
+            O GITA é um gerenciador de Kubernetes baseado em boas práticas, que oferece insights detalhados sobre workloads, eventos,
+            alertas e incidentes. Administre qualquer tipo de recurso do Kubernetes com facilidade.
+          </p>
+        </div>
+    
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="border border-transparent hover:border-zinc-800 hover:bg-black/30 transition-all duration-100 rounded-xl p-6 flex flex-col items-center">
+            <div class="h-[64px] w-[64px] rounded-full bg-gray-700 bg-opacity-25 flex items-center justify-center text-indigo-400">
+              <i data-lucide="server" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-100 text-center" data-i18n="features.workloads">Monitoramento de Workloads</h3>
+            <p class="mt-2 text-base text-gray-300 text-center" data-i18n="features.workloads_desc">Acompanhe a integridade e desempenho de seus workloads.</p>
+          </div>
+    
+          <div class="border border-transparent hover:border-zinc-800 hover:bg-black/30 transition-all duration-100 rounded-xl p-6 flex flex-col items-center">
+            <div class="h-[64px] w-[64px] rounded-full bg-gray-700 bg-opacity-25 flex items-center justify-center text-green-400">
+              <i data-lucide="activity" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-100 text-center" data-i18n="features.events">Eventos em Tempo Real</h3>
+            <p class="mt-2 text-base text-gray-300 text-center" data-i18n="features.events_desc">Receba notificações instantâneas sobre eventos críticos.</p>
+          </div>
+    
+          <div class="border border-transparent hover:border-zinc-800 hover:bg-black/30 transition-all duration-100 rounded-xl p-6 flex flex-col items-center">
+            <div class="h-[64px] w-[64px] rounded-full bg-gray-700 bg-opacity-25 flex items-center justify-center text-yellow-400">
+              <i data-lucide="bell" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-100 text-center" data-i18n="features.alerts">Alertas Personalizados</h3>
+            <p class="mt-2 text-base text-gray-300 text-center" data-i18n="features.alerts_desc">Configure alertas sob medida para seu ambiente.</p>
+          </div>
+    
+          <div class="border border-transparent hover:border-zinc-800 hover:bg-black/30 transition-all duration-100 rounded-xl p-6 flex flex-col items-center">
+            <div class="h-[64px] w-[64px] rounded-full bg-gray-700 bg-opacity-25 flex items-center justify-center text-red-400">
+              <i data-lucide="terminal" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-100 text-center" data-i18n="features.logs">Logs e Shell de Contêiner</h3>
+            <p class="mt-2 text-base text-gray-300 text-center" data-i18n="features.logs_desc">Acesse logs e execute comandos diretamente no shell.</p>
+          </div>
+    
+          <div class="border border-transparent hover:border-zinc-800 hover:bg-black/30 transition-all duration-100 rounded-xl p-6 flex flex-col items-center">
+            <div class="h-[64px] w-[64px] rounded-full bg-gray-700 bg-opacity-25 flex items-center justify-center text-purple-400">
+              <i data-lucide="chart-gantt" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-100 text-center" data-i18n="features.timeline">Linha do Tempo de Eventos</h3>
+            <p class="mt-2 text-base text-gray-300 text-center" data-i18n="features.timeline_desc">Visualize a sequência de eventos para análise rápida.</p>
+          </div>
+    
+          <div class="border border-transparent hover:border-zinc-800 hover:bg-black/30 transition-all duration-100 rounded-xl p-6 flex flex-col items-center">
+            <div class="h-[64px] w-[64px] rounded-full bg-gray-700 bg-opacity-25 flex items-center justify-center text-blue-400">
+              <i data-lucide="git-compare" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-100 text-center" data-i18n="features.compare">Comparação de Clusters</h3>
+            <p class="mt-2 text-base text-gray-300 text-center" data-i18n="features.compare_desc">Identifique diferenças de configuração entre clusters.</p>
+          </div>
+    
+          <div class="border border-transparent hover:border-zinc-800 hover:bg-black/30 transition-all duration-100 rounded-xl p-6 flex flex-col items-center">
+            <div class="h-[64px] w-[64px] rounded-full bg-gray-700 bg-opacity-25 flex items-center justify-center text-pink-400">
+              <i data-lucide="package" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-100 text-center" data-i18n="features.manage">Gerenciamento de Workloads</h3>
+            <p class="mt-2 text-base text-gray-300 text-center" data-i18n="features.manage_desc">Gerencie workloads, services e outros recursos Kubernetes.</p>
+          </div>
+    
+          <div class="border border-transparent hover:border-zinc-800 hover:bg-black/30 transition-all duration-100 rounded-xl p-6 flex flex-col items-center">
+            <div class="h-[64px] w-[64px] rounded-full bg-gray-700 bg-opacity-25 flex items-center justify-center text-orange-400">
+              <i data-lucide="cpu" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-100 text-center" data-i18n="features.resources">Visão de Recursos (CPU e RAM)</h3>
+            <p class="mt-2 text-base text-gray-300 text-center" data-i18n="features.resources_desc">Acompanhe o uso de CPU e memória dos seus recursos.</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="flex flex-col flex-1 items-center justify-center">
-      <img src="img/dalle.png" alt="Mascote Girafa" height="500" />
-    </div>
-  </header>
+  </div>
 
-  <!-- Seção: O que é o GITA -->
-  <section id="sobre" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-semibold mb-4">O que é o GITA?</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          GITA é um gerenciador de Kubernetes baseado em boas práticas. Com ele, você consegue ver quais melhorias podem ser feitas nas suas cargas de trabalho (workloads), além de acompanhar eventos, alertas e incidentes em tempo real.
-        </p>
-      </div>
-      <!-- Adicione aqui mais detalhes ou imagens ilustrativas -->
-    </div>
-  </section>
+  <div class="p-12 bg-gradient-to-r from-[#0E0D12] to-[#0C0B10]">
+    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 py-12 rounded-xl">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col">
+          <h2 class="text-3xl font-extrabold text-black tracking-tight sm:text-4xl text-center" data-i18n="cta.try_title">
+            Quer testar o GITA?
+          </h2>
+          <p class="mt-3 text-lg text-gray-950 font-medium text-center" data-i18n="cta.try_subtitle">
+            Você pode começar agora mesmo. Você receberá 15 dias gratuitos.
+          </p>
+          <div class="mt-6 flex flex-row items-center justify-center gap-4">
+            <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button-lg gita-button__black">
+              <i data-lucide="square-arrow-out-up-right" class="h-6 w-6"></i>
+              <span data-i18n="cta.try_button">Iniciar teste</span>
+            </a>
 
-  <!-- Seção: Recursos -->
-  <section id="recursos" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-semibold mb-4">Recursos</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Obtenha insights detalhados sobre os recursos do Kubernetes, monitore a integridade do cluster e receba alertas personalizados para garantir a estabilidade do seu ambiente.
-        </p>
+            <a href="#contato" target="_blank" class="gita-button gita-button-lg gita-button__white">
+              <i data-lucide="square-pen" class="h-6 w-6"></i>
+              <span data-i18n="cta.contact">Fale conosco</span>
+            </a>
+          </div>
+        </div>
       </div>
-      <!-- Adicione aqui cards ou ícones representando os recursos -->
     </div>
-  </section>
-
-  <!-- Seção: Preço -->
-  <section id="preco" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-semibold mb-4">Preço</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Teste gratuito por 15 dias. Escolha entre as opções SaaS na nuvem ou Self-Hosted com suporte premium 24/7.
-        </p>
-      </div>
-      <!-- Adicione aqui tabelas ou cards de preços -->
-    </div>
-  </section>
-
-  <!-- Seção: Contato -->
-  <section id="contato" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-semibold mb-4">Contato</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Estamos ansiosos para ouvir de você! Entre em contato conosco para qualquer dúvida, comentário ou consulta.
-        </p>
-      </div>
-      <!-- Adicione aqui um formulário de contato ou informações de contato -->
-    </div>
-  </section>
+  </div>
 
   <!-- Rodapé -->
   <footer class="bg-gray-800 text-white py-8">
@@ -144,6 +215,41 @@
       <p>&copy; 2025 JackExperts. Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <!-- Title rotator -->
+  <script>
+    let texts = [
+      "os eventos",
+      "a saúde",
+      "os problemas",
+      "os incidentes",
+      "as boas práticas",
+    ];
+  
+    let textIndex = 0;
+    let charIndex = 0;
+    let typingTimeout;
+
+    const typingSpeed = 75; // milissegundos entre cada caractere
+    const waitTime = 1500;  // tempo para trocar a frase
+    const dynamicText = document.getElementById('dynamicText');
+  
+    function typeWriter() {
+      const currentText = texts[textIndex];
+      if (charIndex < currentText.length) {
+        dynamicText.textContent += currentText.charAt(charIndex);
+        charIndex++;
+        typingTimeout = setTimeout(typeWriter, typingSpeed);
+      } else {
+        typingTimeout = setTimeout(() => {
+          dynamicText.textContent = "";
+          charIndex = 0;
+          textIndex = (textIndex + 1) % texts.length;
+          typeWriter();
+        }, waitTime);
+      }
+    }
+  </script>
 
   <!-- Seletor de idioma -->
   <script>
@@ -159,49 +265,61 @@
         langMenu.classList.add("hidden");
       }
     });
-  
-    document.querySelectorAll('[data-lang]').forEach(button => {
-      button.addEventListener('click', () => {
-        const selectedLang = button.getAttribute('data-lang');
-        console.log("Idioma selecionado:", selectedLang);
-        langMenu.classList.add("hidden");
-      });
-    });
   </script>
 
-  <!-- Title rotator -->
-  <script>
-    const texts = [
-      "Monitoramento de Clusters Kubernetes",
-      "Alertas em Tempo Real",
-      "Multicloud e Multicluster",
-      "Observabilidade sem Complicações"
-    ];
-  
-    let textIndex = 0;
-    let charIndex = 0;
-    const typingSpeed = 75; // milissegundos entre cada caractere
-    const waitTime = 1500;  // tempo para trocar a frase
-    const dynamicText = document.getElementById('dynamicText');
-  
-    function typeWriter() {
-      const currentText = texts[textIndex];
-      if (charIndex < currentText.length) {
-        dynamicText.textContent += currentText.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeWriter, typingSpeed);
-      } else {
-        setTimeout(() => {
-          dynamicText.textContent = "";
-          charIndex = 0;
-          textIndex = (textIndex + 1) % texts.length;
-          typeWriter();
-        }, waitTime);
+<script>
+  async function setLanguage(lang) {
+    try {
+      const response = await fetch(`./lang/${lang}.json`);
+      const translations = await response.json();
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[key]) {
+          el.textContent = translations[key];
+        }
+      });
+
+      // Atualiza o <title> do documento se houver
+      if (translations["site.title"]) {
+        document.title = translations["site.title"];
       }
+
+      // Atualiza o array de textos para o rotating text
+      if (translations["hero.rotating_texts"]) {
+        texts = translations["hero.rotating_texts"];
+        // Reinicia o typewriter para o novo idioma
+        textIndex = 0;
+        charIndex = 0;
+        dynamicText.textContent = "";
+        clearTimeout(typingTimeout); // Limpa qualquer timeout anterior
+        typeWriter();
+      }
+
+      // Salva a escolha no localStorage
+      localStorage.setItem("lang", lang);
+
+      const langMenu = document.getElementById("langMenu");
+      langMenu.classList.toggle("hidden");
+
+      // Seta idioma selecionado no botão
+      debugger;
+      const langButtonTextSpan = document.getElementById('langButtonSpan');
+      langButtonTextSpan.textContent = lang;
+    } catch (error) {
+      console.error("Erro ao carregar idioma:", error);
     }
-  
-    typeWriter();
-  </script>
+  }
+
+  // Carrega o idioma salvo (ou pt por padrão)
+  const savedLang = localStorage.getItem("lang") || "pt";
+
+  setLanguage(savedLang);
+</script>
+
+<script>
+  lucide.createIcons();
+</script>
   
 </body>
 </html>
