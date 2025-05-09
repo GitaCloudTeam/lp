@@ -50,5 +50,16 @@
     "cta.demo_title": "How about scheduling a chat?",
     "cta.demo_subtitle": "Send us a message and we will contact you to arrange a live demo and answer your questions.",
     "cta.demo_button": "Click here",
-    "cta.contact": "Get in touch"
+    "cta.contact": "Get in touch",
+
+    "problems.title": "What problems does GITA help you solve?",
+    "problems.description": "GITA was created to address the real day-to-day challenges of Kubernetes clusters, going far beyond traditional monitoring.",
+    "problems.item1_title": "Misconfiguration",
+    "problems.item1_description": "Detect configuration flaws that affect the security and stability of the environment.",
+    "problems.item2_title": "Real-time debugging",
+    "problems.item2_description": "Get quick access to logs and the shell to diagnose incidents with agility.",
+    "problems.item3_title": "Cluster access",
+    "problems.item3_description": "Access the cluster securely and easily, without relying on external solutions.",
+    "problems.item4_title": "Kubernetes resource management",
+    "problems.item4_description": "Visualize and edit any cluster resource with practicality and security."
   }

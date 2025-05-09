@@ -50,5 +50,16 @@
     "cta.demo_title": "Que tal marcarmos uma conversa?",
     "cta.demo_subtitle": "Envie uma mensagem para nós e entraremos em contato com você para fazermos uma demonstração ao vivo e tirar dúvidas.",
     "cta.demo_button": "Clique aqui",
-    "cta.contact": "Fale com um especialista"
+    "cta.contact": "Fale com um especialista",
+
+    "problems.title": "Quais problemas o GITA ajuda você a resolver?",
+    "problems.description": "O GITA foi criado para lidar com os desafios reais do dia a dia de clusters Kubernetes, indo muito além do monitoramento tradicional.",
+    "problems.item1_title": "Má configuração",
+    "problems.item1_description": "Detecte falhas de configuração que afetam a segurança e a estabilidade do ambiente.",
+    "problems.item2_title": "Depuração em tempo real",
+    "problems.item2_description": "Tenha acesso rápido a logs e ao shell para diagnosticar incidentes com agilidade.",
+    "problems.item3_title": "Acesso ao cluster",
+    "problems.item3_description": "Acesse o cluster com segurança e facilidade, sem depender de soluções externas.",
+    "problems.item4_title": "Gestão de recursos Kubernetes",
+    "problems.item4_description": "Visualize e edite qualquer recurso do cluster com praticidade e segurança."
   }
