@@ -207,3 +207,8 @@
       opacity: 0;
     }
   }
+
+  #footer * {
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+  }

@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title data-i18n="site.title">Gita – Observabilidade Kubernetes</title>
+  <title data-i18n="site.title">Gita – Incidentes, problemas e eventos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=InterTight:wght@300;400;500;600;700;800&display=swap"/>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="js/form.js"></script>
 
   <!-- Ícones -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -87,7 +89,7 @@
           <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button-lg gita-button__primary">
             <span data-i18n="hero.cta_start">Começar Agora</span>
           </a>
-          <a href="#about" target="_blank" class="gita-button gita-button-lg gita-button__transparent">
+          <a href="#about" class="gita-button gita-button-lg gita-button__transparent">
             <i data-lucide="move-down" class="h-6 w-6"></i>
             <span data-i18n="hero.cta_learn_more">
               Saiba mais
@@ -200,7 +202,7 @@
               <span data-i18n="cta.try_button">Iniciar teste</span>
             </a>
 
-            <a href="#contato" target="_blank" class="gita-button gita-button-lg gita-button__white">
+            <a href="#contato" class="gita-button gita-button-lg gita-button__white">
               <i data-lucide="square-pen" class="h-6 w-6"></i>
               <span data-i18n="cta.contact">Fale conosco</span>
             </a>
@@ -219,7 +221,7 @@
         </div>
         <div class="lg:w-1/2">
           <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4 text-gray-100" data-i18n="problems.title">
-            Problemas que o GITA ajuda a resolver
+            Quais problemas o GITA ajuda você a resolver?
           </h2>
           <p class="text-lg text-gray-300 mb-6 text-xl leading-tight" data-i18n="problems.description">
             O GITA foi criado para lidar com os desafios reais do dia a dia de clusters Kubernetes, indo muito além do monitoramento tradicional.
@@ -392,27 +394,27 @@
               <div class="h-[48px] w-[48px] flex items-center justify-center bg-white/5 rounded-lg">
                 <i data-lucide="flag" class="h-6 w-6 text-indigo-500"></i>
               </div>
-              <h3 class="text-xl font-semibold text-indigo-400" data-i18n="pricing.free_trial.title">Teste Gratuito</h3>
+              <h3 class="text-xl font-semibold text-indigo-400" data-i18n="pricing.free.title">Teste Gratuito</h3>
             </div>
-            <p class="text-sm text-gray-300 mb-2" data-i18n="pricing.free_trial.description">
+            <p class="text-sm text-gray-300 mb-2" data-i18n="pricing.free.description">
               Use durante 15 dias gratuitamente
             </p>
             <div class="flex items-baseline mb-4">
-              <span class="font-bold text-3xl text-white" data-i18n="pricing.free_trial.price">
+              <span class="font-bold text-3xl text-white" data-i18n="pricing.free.price">
                 Free
               </span>
-              <span class="ml-1 text-gray-400" data-i18n="pricing.free_trial.unit">
+              <span class="ml-1 text-gray-400" data-i18n="pricing.free.unit">
                 /node-hour
               </span>
             </div>
             <div class="grid grid-cols-[28px_1fr] text-gray-300 mb-6">
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-indigo-500"></i> <div data-i18n="pricing.free_trial.feature1">Coleta de Incidentes</div>
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-indigo-500"></i> <div data-i18n="pricing.free_trial.feature2">Coleta de Segurança</div>
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-indigo-500"></i> <div data-i18n="pricing.free_trial.feature3">Coleta de Problemas</div>
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-indigo-500"></i> <div data-i18n="pricing.free_trial.feature4">Multicluster</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-indigo-500"></i> <div data-i18n="pricing.free.feature1">Coleta de Incidentes</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-indigo-500"></i> <div data-i18n="pricing.free.feature2">Coleta de Segurança</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-indigo-500"></i> <div data-i18n="pricing.free.feature3">Coleta de Problemas</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-indigo-500"></i> <div data-i18n="pricing.free.feature4">Multicluster</div>
             </div>
           </div>
-          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary gita-button-block w-full text-center items-center justify-center" data-i18n="pricing.free_trial.cta">
+          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary gita-button-block w-full text-center items-center justify-center" data-i18n="pricing.cta">
             Começar Agora
           </a>
         </div>
@@ -423,29 +425,29 @@
               <div class="h-[48px] w-[48px] flex items-center justify-center bg-white/5 rounded-lg">
                 <i data-lucide="server" class="h-6 w-6 text-orange-500"></i>
               </div>
-              <h3 class="text-xl font-semibold text-orange-400" data-i18n="pricing.saas.title">SaaS - Cloud</h3>
+              <h3 class="text-xl font-semibold text-orange-400" data-i18n="pricing.basic.title">SaaS - Cloud</h3>
             </div>
 
             <div class="flex items-baseline mb-4">
               <span class="font-bold text-3xl text-white">
                 R$
               </span>
-              <span class="font-bold text-3xl text-white" data-i18n="pricing.saas.price">
+              <span class="font-bold text-3xl text-white" data-i18n="pricing.basic.price">
                 0.30
               </span>
-              <span class="ml-1 text-gray-400" data-i18n="pricing.saas.unit">
+              <span class="ml-1 text-gray-400" data-i18n="pricing.basic.unit">
                 /node-hour
               </span>
             </div>
             <div class="grid grid-cols-[28px_1fr] text-gray-300 mb-6">
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.saas.feature1">Coleta de Incidentes</div>
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.saas.feature2">Coleta de Segurança</div>
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.saas.feature3">Coleta de Problemas</div>
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.saas.feature4">Multicluster</div>
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.saas.feature5">SaaS - Cloud</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.basic.feature1">Coleta de Incidentes</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.basic.feature2">Coleta de Segurança</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.basic.feature3">Coleta de Problemas</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.basic.feature4">Multicluster</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.basic.feature5">SaaS - Cloud</div>
             </div>
           </div>
-          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary gita-button-block w-full text-center items-center justify-center" data-i18n="pricing.saas.cta">
+          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary gita-button-block w-full text-center items-center justify-center" data-i18n="pricing.cta">
             Começar Agora
           </a>
         </div>
@@ -456,34 +458,34 @@
               <div class="h-[48px] w-[48px] flex items-center justify-center bg-white/5 rounded-lg">
                 <i data-lucide="server-cog" class="h-6 w-6 text-green-500"></i>
               </div>
-              <h3 class="text-xl font-semibold text-green-400" data-i18n="pricing.self_hosted.title">
+              <h3 class="text-xl font-semibold text-green-400" data-i18n="pricing.premium.title">
                 Self-Hosted
               </h3>
             </div>
-            <p class="text-sm text-gray-300 mb-2" data-i18n="pricing.self_hosted.description">
+            <p class="text-sm text-gray-300 mb-2" data-i18n="pricing.premium.description">
               Todos os itens anteriores
             </p>
             <div class="grid grid-cols-[28px_1fr] text-gray-300 mb-6">
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-green-500"></i> <div data-i18n="pricing.self_hosted.feature1">Todos os itens anteriores</div>
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-green-500"></i> <div data-i18n="pricing.self_hosted.feature2">Hospedado Localmente</div>
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-green-500"></i> <div data-i18n="pricing.self_hosted.feature3">Suporte premium 24/7</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-green-500"></i> <div data-i18n="pricing.premium.feature1">Todos os itens anteriores</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-green-500"></i> <div data-i18n="pricing.premium.feature2">Hospedado Localmente</div>
+              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-green-500"></i> <div data-i18n="pricing.premium.feature3">Suporte premium 24/7</div>
             </div>
             <div class="flex items-baseline mb-4">
-              <span class="font-bold text-3xl text-white" data-i18n="pricing.self_hosted.price">
+              <span class="font-bold text-3xl text-white" data-i18n="pricing.premium.price">
                 Solicitar
               </span>
-              <span class="ml-1 text-gray-400" data-i18n="pricing.self_hosted.unit">
+              <span class="ml-1 text-gray-400" data-i18n="pricing.premium.unit">
                 Orçamento
               </span>
             </div>
           </div>
-          <a href="#contato" class="gita-button gita-button__secondary gita-button-block w-full text-center items-center justify-center" data-i18n="pricing.self_hosted.cta">
+          <a href="#contato" class="gita-button gita-button__secondary gita-button-block w-full text-center items-center justify-center" data-i18n="pricing.quote">
             Solicitar Orçamento
           </a>
         </div>
       </div>
   
-      <div class="mt-16">
+      <div class="mt-16" id="questions">
         <h2 class="text-2xl font-semibold text-gray-100 mb-6 text-center" data-i18n="faq.title">
           Perguntas frequentes
         </h2>
@@ -547,6 +549,98 @@
       </div>
     </div>
   </div>
+
+  <section id="contato" class="p-12" style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
+    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 py-12 rounded-xl">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col justify-around items-center gap-8">
+          <div class="text-center text-black">
+            <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4" data-i18n="contact.title">
+              Quer falar conosco?
+            </h2>
+            <p class="mt-3 text-lg font-medium" data-i18n="contact.description">
+              Envie-nos uma mensagem e entraremos em contato o mais breve possível.
+            </p>
+          </div>
+
+          <div class="md:w-1/2">
+            <form id="contact-form" class="flex flex-col gap-4 text-black">
+              <div>
+                <label for="nome" class="block text-sm font-bold mb-2" data-i18n="contact.name_label">Seu Nome</label>
+                <input type="text" id="nome" name="nome" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-bold mb-2" data-i18n="contact.email_label">Email</label>
+                <input type="email" id="email" name="email" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
+              </div>
+              <div>
+                <label for="assunto" class="block text-sm font-bold mb-2" data-i18n="contact.subject_label">Assunto</label>
+                <input type="text" id="assunto" name="assunto" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
+              </div>
+              <div>
+                <label for="mensagem" class="block text-sm font-bold mb-2" data-i18n="contact.message_label">Sua Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"></textarea>
+              </div>
+              <button type="submit" class="gita-button gita-button-lg gita-button__black w-full text-center items-center justify-center" data-i18n="contact.send_button">Enviar Mensagem</button>
+              <p id="form-status" class="text-sm mt-2"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-[70px]" style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <div class="flex flex-col gap-2 items-start">
+        <img src="img/logo-gita-white.svg" width="120"/>
+        <small class="text-left mb-6" data-i18n="footer.description">Acompanhe seus servidores e clusters Kubernetes a faça gestão de incidentes e boas práticas.</small>
+
+        <small class="text-gray-500">Powered by Jack Experts</small>
+        <a href="https://jackexperts.com" target="_blank"><img src="img/logo-jackexperts.png" width="80"/></a>
+      </div>
+
+      <div class="flex flex-col gap-2 items-start">
+        <h3 class="text-lg font-semibold mb-4" data-i18n="footer.gita">Gita</h3>
+        <ul class="list-none space-y-2 text-left">
+          <li><a href="#about" class="text-gray-300 hover:text-white" data-i18n="footer.about">O que é o GITA?</a></li>
+          <li><a href="#questions" class="text-gray-300 hover:text-white" data-i18n="footer.faq">Perguntas Frequentes</a></li>
+          <li><a href="policy.html" class="text-gray-300 hover:text-white" data-i18n="footer.policy">Política</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-2 items-start">
+        <h3 class="text-lg font-semibold mb-4" data-i18n="footer.resources">Recursos</h3>
+        <ul class="list-none space-y-2 text-left">
+          <li><a href="https://doc.gita.cloud/" class="text-gray-300 hover:text-white" data-i18n="footer.documentation">Documentação</a></li>
+          <li><a href="#help" class="text-gray-300 hover:text-white" data-i18n="footer.help_support">Ajuda e Suporte</a></li>
+          <li><a href="#contact" class="text-gray-300 hover:text-white" data-i18n="footer.contact">Contato</a></li>
+          <li><a href="#pricing" class="text-gray-300 hover:text-white" data-i18n="footer.pricing">Preço</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-2 items-start">
+        <h3 class="text-lg font-semibold mb-4" data-i18n="footer.contact">Contato</h3>
+
+        <a href="tel:+5561992736646" class="flex flex-row gap-1 items-center">
+          <i data-lucide="phone" class="h-4 min-w-4 w-4 text-orange-500"></i>
+          <p class="text-white hover:underline">(61) 99273-6646</p>
+        </a>
+
+        <a href="mailto:contato@jackexperts.com.br" class="flex flex-row gap-1 items-center">
+          <i data-lucide="mail" class="h-4 min-w-4 w-4 text-orange-500"></i>
+          <p class="text-white hover:underline">contato@jackexperts.com.br</p>
+        </a>
+
+        <a href="https://maps.app.goo.gl/DnSbDzYLUcy7g8T36" target="_blank" class="flex flex-row gap-1 items-center">
+          <i data-lucide="pin" class="h-4 min-w-4 w-4 text-orange-500"></i>
+          <p class="text-white hover:underline leading-tight text-left">SCRS 516, Bloco B, Nº 69, Asa Sul, CEP: 70.381-525, Brasília/DF</p>
+        </a>
+      </div>
+    </div>
+  </footer>
+
   
   <script>
     function toggleFAQ(id) {
@@ -560,13 +654,6 @@
   <script>
     lucide.createIcons();
   </script>
-
-  <!-- Rodapé -->
-  <footer class="bg-gray-800 text-white py-8">
-    <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2025 JackExperts. Todos os direitos reservados.</p>
-    </div>
-  </footer>
 
   <!-- Title rotator -->
   <script>
