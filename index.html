@@ -10,8 +10,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=InterTight:wght@300;400;500;600;700;800&display=swap"/>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="img/icon-gita.svg">
 
-  <script src="js/form.js"></script>
+  <meta name="description" content="Gita - Encontre soluções para incidentes, problemas e eventos Kubernetes. Aprenda como gerenciar Kubernetes de maneira eficaz com a Gita.">
+  <meta name="keywords" content="Gita, Kubernetes, gerenciamento, monitoramento, observabilidade, incidentes, problemas, segurança, eventos">
 
   <!-- Ícones -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -71,7 +73,7 @@
 
   
   <!-- Hero Section -->
-  <div style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
+  <section style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
     <header id="home" class="flex flex-row min-h-[600px] pt-[120px] pb-[70px] px-[4%] gap-4">
       <div class="flex flex-col justify-center flex-1 mx-auto px-4 text-left gap-3">
         <!-- Mascote da girafa -->
@@ -183,10 +185,66 @@
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- Cards toggle funcionalidade -->
+    <div class="container mx-auto px-4 py-[70px]">
+        <div class="flex max-lg:flex-col gap-10">
+            <div class="w-[45%] space-y-4 max-lg:w-full" id="text-container">
+              <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4 text-gray-100" data-i18n="title">
+                Gerencie e otimize o seu Kubernetes
+              </h2>
+              <div class="w-full flex flex-col gap-2" id="card-container">
+                  <div class="rounded-xl border bg-card text-card-foreground shadow cursor-pointer transition card border-gray-800 bg-gray-900 hover:bg-gray-800"
+                        data-image="img/prints/accordion/image008.webp"
+                        data-description="defaultLongText">
+                      <div class="flex flex-col space-y-1.5 p-6">
+                          <h3 class="font-semibold leading-none tracking-tight text-foreground text-gray-50" data-i18n="timelineEventsTitle">Eventos da linha do tempo</h3>
+                          <p class="text-sm text-gray-300" data-i18n="timelineEventsDescription">Monitore o histórico de eventos e reaja rapidamente a incidentes e mudanças.</p>
+                      </div>
+                  </div>
+                  <div class="rounded-xl border bg-card text-card-foreground shadow cursor-pointer transition card border-gray-800 bg-gray-900 hover:bg-gray-800"
+                        data-image="img/prints/accordion/image009.webp"
+                        data-description="compareResourcesLongText">
+                      <div class="flex flex-col space-y-1.5 p-6">
+                          <h3 class="font-semibold leading-none tracking-tight text-foreground text-gray-50" data-i18n="compareResourcesTitle">Compare recursos de clusters</h3>
+                          <p class="text-sm text-gray-300" data-i18n="compareResourcesDescription">Identifique rapidamente diferenças de configuração entre clusters e recursos.</p>
+                      </div>
+                  </div>
+                  <div class="rounded-xl border bg-card text-card-foreground shadow cursor-pointer transition card border-gray-800 bg-gray-900 hover:bg-gray-800"
+                        data-image="img/prints/accordion/image010.webp"
+                        data-description="customRulesLongText">
+                      <div class="flex flex-col space-y-1.5 p-6">
+                          <h3 class="font-semibold leading-none tracking-tight text-foreground text-gray-50" data-i18n="customRulesTitle">Regras personalizadas</h3>
+                          <p class="text-sm text-gray-300" data-i18n="customRulesDescription">Defina alertas personalizados para detectar problemas antes que eles afetem o sistema.</p>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="w-[55%] flex flex-col flex items-center justify-center mt-auto gap-[30px]" id="image-container">
+
+                <p class="text-muted-foreground min-h-[110px] text-[18px] leading-tight text-gray-100" id="description-text" data-i18n="defaultLongText">
+                    The timeline functionality displays an interactive timeline of all events in your Kubernetes cluster,
+                    including incidents, changes, and issues. It makes it easy to track the sequence of events and quickly
+                    identify root causes of failures or unexpected changes in the system.
+                </p>
+
+                <div class="relative rounded-md" id="image-wrapper">
+                    <img
+                        id="main-image"
+                        alt="Kubernetes Cluster"
+                        src="img/prints/accordion/image008.webp"
+                        class="rounded-md"
+                        style="color: transparent;"
+                    >
+                    <div class="absolute w-full h-full top-0 bg-gradient-to-l from-zinc-950 max-lg:!bg-gradient-to-b"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
 
   <!-- Seção 3 CTA -->
-  <div class="p-12 bg-gradient-to-r from-[#0E0D12] to-[#0C0B10]">
+  <section class="p-12 bg-gradient-to-r from-[#0E0D12] to-[#0C0B10]">
     <div class="bg-gradient-to-r from-yellow-400 to-orange-500 py-12 rounded-xl">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col">
@@ -210,10 +268,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Seção 4 Problemas-->
-  <div class="py-16 bg-zinc-950 text-white">
+  <section class="py-16 bg-zinc-950 text-white">
     <div class="max-w-7xl mx-auto px-4 py-[60px]">
       <div class="flex flex-row items-center justify-center items-center gap-10">
         <div class="lg:w-1/2 mb-8 lg:mb-0">
@@ -267,10 +325,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Seção 5 Recursos -->
-  <div class="py-16 bg-gradient-to-r from-[#0E0D12] to-[#0C0B10] text-white">
+  <section class="py-16 bg-gradient-to-r from-[#0E0D12] to-[#0C0B10] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4 text-center text-gray-100" data-i18n="features_showcase.title_section5">
         Funcionalidades
@@ -359,7 +417,7 @@
   
         <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center">
           <div class="md:col-span-1">
-            <img src="img/prints/print_timeline_gita.webp" alt="" class="rounded-lg shadow-lg w-full h-auto" />
+            <img src="img/prints/print_ack_gita.webp" alt="" class="rounded-lg shadow-lg w-full h-auto" />
           </div>
           <div class="md:col-span-1 flex flex-col gap-4">
             <h3 class="text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.ack_title">ACK</h3>
@@ -374,9 +432,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div id="pricing" class="py-16 bg-zinc-900 text-white">
+  <section id="pricing" class="py-16 bg-zinc-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-gray-100" data-i18n="pricing.title">
@@ -403,7 +461,7 @@
               <span class="font-bold text-3xl text-white" data-i18n="pricing.free.price">
                 Free
               </span>
-              <span class="ml-1 text-gray-400" data-i18n="pricing.free.unit">
+              <span class="ml-1 text-gray-400" data-i18n="pricing.unit">
                 /node-hour
               </span>
             </div>
@@ -429,11 +487,8 @@
             </div>
 
             <div class="flex items-baseline mb-4">
-              <span class="font-bold text-3xl text-white">
-                R$
-              </span>
               <span class="font-bold text-3xl text-white" data-i18n="pricing.basic.price">
-                0.30
+                R$ 0.30
               </span>
               <span class="ml-1 text-gray-400" data-i18n="pricing.basic.unit">
                 /node-hour
@@ -444,7 +499,6 @@
               <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.basic.feature2">Coleta de Segurança</div>
               <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.basic.feature3">Coleta de Problemas</div>
               <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.basic.feature4">Multicluster</div>
-              <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-orange-500"></i> <div data-i18n="pricing.basic.feature5">SaaS - Cloud</div>
             </div>
           </div>
           <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary gita-button-block w-full text-center items-center justify-center" data-i18n="pricing.cta">
@@ -462,21 +516,10 @@
                 Self-Hosted
               </h3>
             </div>
-            <p class="text-sm text-gray-300 mb-2" data-i18n="pricing.premium.description">
-              Todos os itens anteriores
-            </p>
             <div class="grid grid-cols-[28px_1fr] text-gray-300 mb-6">
               <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-green-500"></i> <div data-i18n="pricing.premium.feature1">Todos os itens anteriores</div>
               <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-green-500"></i> <div data-i18n="pricing.premium.feature2">Hospedado Localmente</div>
               <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-green-500"></i> <div data-i18n="pricing.premium.feature3">Suporte premium 24/7</div>
-            </div>
-            <div class="flex items-baseline mb-4">
-              <span class="font-bold text-3xl text-white" data-i18n="pricing.premium.price">
-                Solicitar
-              </span>
-              <span class="ml-1 text-gray-400" data-i18n="pricing.premium.unit">
-                Orçamento
-              </span>
             </div>
           </div>
           <a href="#contato" class="gita-button gita-button__secondary gita-button-block w-full text-center items-center justify-center" data-i18n="pricing.quote">
@@ -548,45 +591,41 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <section id="contato" class="p-12" style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
+  <section id="contact" class="p-12" style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
     <div class="bg-gradient-to-r from-yellow-400 to-orange-500 py-12 rounded-xl">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col justify-around items-center gap-8">
-          <div class="text-center text-black">
-            <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4" data-i18n="contact.title">
-              Quer falar conosco?
-            </h2>
-            <p class="mt-3 text-lg font-medium" data-i18n="contact.description">
-              Envie-nos uma mensagem e entraremos em contato o mais breve possível.
-            </p>
-          </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col justify-around items-center gap-8">
+                <div class="text-center text-black">
+                    <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4" data-i18n="contact.title">
+                        Quer falar conosco?
+                    </h2>
+                    <p class="mt-3 text-lg font-medium" data-i18n="contact.description">
+                        Envie-nos uma mensagem e entraremos em contato o mais breve possível.
+                    </p>
+                </div>
 
-          <div class="md:w-1/2">
-            <form id="contact-form" class="flex flex-col gap-4 text-black">
-              <div>
-                <label for="nome" class="block text-sm font-bold mb-2" data-i18n="contact.name_label">Seu Nome</label>
-                <input type="text" id="nome" name="nome" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
-              </div>
-              <div>
-                <label for="email" class="block text-sm font-bold mb-2" data-i18n="contact.email_label">Email</label>
-                <input type="email" id="email" name="email" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
-              </div>
-              <div>
-                <label for="assunto" class="block text-sm font-bold mb-2" data-i18n="contact.subject_label">Assunto</label>
-                <input type="text" id="assunto" name="assunto" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
-              </div>
-              <div>
-                <label for="mensagem" class="block text-sm font-bold mb-2" data-i18n="contact.message_label">Sua Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows="5" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"></textarea>
-              </div>
-              <button type="submit" class="gita-button gita-button-lg gita-button__black w-full text-center items-center justify-center" data-i18n="contact.send_button">Enviar Mensagem</button>
-              <p id="form-status" class="text-sm mt-2"></p>
-            </form>
-          </div>
+                <div class="md:w-1/2">
+                    <form id="contact-form" class="flex flex-col gap-4 text-black" data-form-type="formoid" data-form-name="contactForm">
+                        <div>
+                            <label for="nome" class="block text-sm font-bold mb-2" data-i18n="contact.name_label">Seu Nome</label>
+                            <input type="text" id="nome" name="nome" data-form-field="name" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-bold mb-2" data-i18n="contact.email_label">Email</label>
+                            <input type="email" id="email" name="email" data-form-field="email" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" data-form-email="true">
+                        </div>
+                        <div>
+                            <label for="mensagem" class="block text-sm font-bold mb-2" data-i18n="contact.message_label">Sua Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" data-form-field="message" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="gita-button gita-button-lg gita-button__black w-full text-center items-center justify-center" data-i18n="contact.send_button">Enviar Mensagem</button>
+                        <p id="form-status" class="text-sm mt-2" data-form-alert="true"></p>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   </section>
 
@@ -596,9 +635,11 @@
       <div class="flex flex-col gap-2 items-start">
         <img src="img/logo-gita-white.svg" width="120"/>
         <small class="text-left mb-6" data-i18n="footer.description">Acompanhe seus servidores e clusters Kubernetes a faça gestão de incidentes e boas práticas.</small>
-
-        <small class="text-gray-500">Powered by Jack Experts</small>
-        <a href="https://jackexperts.com" target="_blank"><img src="img/logo-jackexperts.png" width="80"/></a>
+        
+        <div class="flex flex-col rounded-md bg-gray-700 px-4 py-3 gap-1">
+          <small class="text-gray-100">Powered by Jack Experts</small>
+          <a href="https://jackexperts.com" target="_blank"><img src="img/logo-jackexperts.png" width="100"/></a>
+        </div>
       </div>
 
       <div class="flex flex-col gap-2 items-start">
@@ -641,123 +682,15 @@
     </div>
   </footer>
 
-  
-  <script>
-    function toggleFAQ(id) {
-      const element = document.getElementById(id);
-      element.classList.toggle('hidden');
-      const icon = element.previousElementSibling.querySelector('i');
-      icon.classList.toggle('rotate-180');
-    }
-  </script>
-  
-  <script>
-    lucide.createIcons();
-  </script>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/languageSelector.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/formoid.min.js"></script>
+  <script src="js/lucidIcons.js"></script>
+  <script src="js/toggleFaq.js"></script>
+  <script src="js/titleRotator.js"></script>
+  <script src="js/cardsToggleFunctionality.js"></script>
 
-  <!-- Title rotator -->
-  <script>
-    let texts = [
-      "os eventos",
-      "a saúde",
-      "os problemas",
-      "os incidentes",
-      "as boas práticas",
-    ];
-  
-    let textIndex = 0;
-    let charIndex = 0;
-    let typingTimeout;
-
-    const typingSpeed = 75; // milissegundos entre cada caractere
-    const waitTime = 1500;  // tempo para trocar a frase
-    const dynamicText = document.getElementById('dynamicText');
-  
-    function typeWriter() {
-      const currentText = texts[textIndex];
-      if (charIndex < currentText.length) {
-        dynamicText.textContent += currentText.charAt(charIndex);
-        charIndex++;
-        typingTimeout = setTimeout(typeWriter, typingSpeed);
-      } else {
-        typingTimeout = setTimeout(() => {
-          dynamicText.textContent = "";
-          charIndex = 0;
-          textIndex = (textIndex + 1) % texts.length;
-          typeWriter();
-        }, waitTime);
-      }
-    }
-  </script>
-
-  <!-- Seletor de idioma -->
-  <script>
-    const langButton = document.getElementById("langButton");
-    const langMenu = document.getElementById("langMenu");
-  
-    langButton.addEventListener("click", () => {
-      langMenu.classList.toggle("hidden");
-    });
-  
-    document.addEventListener("click", (e) => {
-      if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
-        langMenu.classList.add("hidden");
-      }
-    });
-  </script>
-
-<script>
-  async function setLanguage(lang) {
-    try {
-      const response = await fetch(`./lang/${lang}.json`);
-      const translations = await response.json();
-
-      document.querySelectorAll("[data-i18n]").forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        if (translations[key]) {
-          el.textContent = translations[key];
-        }
-      });
-
-      // Atualiza o <title> do documento se houver
-      if (translations["site.title"]) {
-        document.title = translations["site.title"];
-      }
-
-      // Atualiza o array de textos para o rotating text
-      if (translations["hero.rotating_texts"]) {
-        texts = translations["hero.rotating_texts"];
-        // Reinicia o typewriter para o novo idioma
-        textIndex = 0;
-        charIndex = 0;
-        dynamicText.textContent = "";
-        clearTimeout(typingTimeout); // Limpa qualquer timeout anterior
-        typeWriter();
-      }
-
-      // Salva a escolha no localStorage
-      localStorage.setItem("lang", lang);
-
-      const langMenu = document.getElementById("langMenu");
-      langMenu.classList.toggle("hidden");
-
-      // Seta idioma selecionado no botão
-      const langButtonTextSpan = document.getElementById('langButtonSpan');
-      langButtonTextSpan.textContent = lang;
-    } catch (error) {
-      console.error("Erro ao carregar idioma:", error);
-    }
-  }
-
-  // Carrega o idioma salvo (ou pt por padrão)
-  const savedLang = localStorage.getItem("lang") || "pt";
-
-  setLanguage(savedLang);
-</script>
-
-<script>
-  lucide.createIcons();
-</script>
-  
 </body>
 </html>
