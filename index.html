@@ -15,10 +15,14 @@
   <meta name="description" content="Gita - Encontre soluções para incidentes, problemas e eventos Kubernetes. Aprenda como gerenciar Kubernetes de maneira eficaz com a Gita.">
   <meta name="keywords" content="Gita, Kubernetes, gerenciamento, monitoramento, observabilidade, incidentes, problemas, segurança, eventos">
 
+  <script src="js/cardsToggleFunctionality.js"></script>
+
   <!-- Ícones -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-[#0b0f19] text-gray-800 relative">
+
+  <div id="header-placeholder"></div>
 
   <!-- Navbar -->
   <header class="shadow-sm absolute top-0 left-0 right-0 m-auto">
@@ -100,7 +104,7 @@
         </div>
       </div>
       <div class="flex flex-col flex-1 items-center justify-center">
-        <img src="img/dalle.png" alt="Mascote Girafa" height="500" />
+        <img src="img/dalle.webp" alt="Mascote Girafa" height="500" />
       </div>
     </header>
 
@@ -260,7 +264,7 @@
               <span data-i18n="cta.try_button">Iniciar teste</span>
             </a>
 
-            <a href="#contato" class="gita-button gita-button-lg gita-button__white">
+            <a href="#contact" class="gita-button gita-button-lg gita-button__white">
               <i data-lucide="square-pen" class="h-6 w-6"></i>
               <span data-i18n="cta.contact">Fale conosco</span>
             </a>
@@ -522,7 +526,7 @@
               <i data-lucide="chevron-right" class="h-5 w-5 mt-0.5 text-green-500"></i> <div data-i18n="pricing.premium.feature3">Suporte premium 24/7</div>
             </div>
           </div>
-          <a href="#contato" class="gita-button gita-button__secondary gita-button-block w-full text-center items-center justify-center" data-i18n="pricing.quote">
+          <a href="#contact" class="gita-button gita-button__secondary gita-button-block w-full text-center items-center justify-center" data-i18n="pricing.quote">
             Solicitar Orçamento
           </a>
         </div>
@@ -647,7 +651,7 @@
         <ul class="list-none space-y-2 text-left">
           <li><a href="#about" class="text-gray-300 hover:text-white" data-i18n="footer.about">O que é o GITA?</a></li>
           <li><a href="#questions" class="text-gray-300 hover:text-white" data-i18n="footer.faq">Perguntas Frequentes</a></li>
-          <li><a href="policy.html" class="text-gray-300 hover:text-white" data-i18n="footer.policy">Política</a></li>
+          <li><a onclick="openPolicy()" class="text-gray-300 hover:text-white" data-i18n="footer.policy">Política</a></li>
         </ul>
       </div>
 
@@ -682,15 +686,18 @@
     </div>
   </footer>
 
+  <div id="footer-placeholder"></div>
+
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/languageSelector.js"></script>
   <script src="js/i18n.js"></script>
-  <script src="js/formoid.min.js"></script>
+  <script src="js/formoid.js"></script>
   <script src="js/lucidIcons.js"></script>
   <script src="js/toggleFaq.js"></script>
   <script src="js/titleRotator.js"></script>
   <script src="js/cardsToggleFunctionality.js"></script>
+  <script src="js/openPolicy.js"></script>
 
 </body>
 </html>

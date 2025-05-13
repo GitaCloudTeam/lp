@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="site.title">Gita – Incidentes, problemas e eventos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=InterTight:wght@300;400;500;600;700;800&display=swap"/>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="img/icon-gita.svg">
+
+  <meta name="description" content="Gita - Encontre soluções para incidentes, problemas e eventos Kubernetes. Aprenda como gerenciar Kubernetes de maneira eficaz com a Gita.">
+  <meta name="keywords" content="Gita, Kubernetes, gerenciamento, monitoramento, observabilidade, incidentes, problemas, segurança, eventos">
+
+  <script src="js/cardsToggleFunctionality.js"></script>
+
+  <!-- Ícones -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#0b0f19] text-gray-800 relative flex flex-col">
+
+<header class="shadow-sm absolute top-0 left-0 right-0 m-auto">
+    <div class="px-[8%] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 space-x-6">
+        <!-- Logo -->
+        <div class="flex flex-1">
+          <a href="https://gitacloudteam.github.io/lp/#" class="text-2xl font-bold text-indigo-600">
+            <img src="img/logo-gita-white.svg" width="120"/>
+          </a>
+        </div>
+  
+        <!-- Navegação -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="https://gitacloudteam.github.io/lp/#home" class="gita-menu-item" data-i18n="menu.home"></a>
+          <a href="https://gitacloudteam.github.io/lp/#about" class="gita-menu-item" data-i18n="menu.about"></a>
+          <a href="https://gitacloudteam.github.io/lp/#pricing" class="gita-menu-item" data-i18n="menu.pricing"></a>
+          <a href="https://gitacloudteam.github.io/lp/#contact" class="gita-menu-item" data-i18n="menu.contact"></a>
+          <a href="https://gitacloudteam.github.io/lp/#docs" class="gita-menu-item" data-i18n="menu.docs"></a>
+        </nav>
+  
+        <!-- Ações -->
+        <div class="flex flex-1 items-center justify-end space-x-4">
+          <!-- Dropdown de Idioma -->
+          <div class="relative inline-block text-left">
+            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center w-full rounded-md shadow-sm px-2 py-1 bg-transparent text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
+              <i data-lucide="globe" class="h-4 w-4"></i>
+              <span id="langButtonSpan" class="uppercase">PT</span>
+              <i data-lucide="chevron-down" class="h-4 w-4"></i>
+            </button>
+
+            <div id="langMenu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5">
+              <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="langButton">
+                <button onclick="setLanguage('pt')" data-lang="pt" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
+                <button onclick="setLanguage('en')" data-lang="en" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://app.gita.cloud/" target="_blank" class="gita-button gita-button__secondary" data-i18n="menu.login">
+            Login
+          </a>
+  
+          <!-- CTA -->
+          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary" data-i18n="menu.signup">
+            Começar Agora
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<div class="flex flex-col gap-44 mt-[80px] w-full h-full ">
+   <section id="home" class="flex flex-col gap-14 items-start justify-center py-20 px-10">
+      <div class="flex flex-col gap-4">
+         <h5 class="text-white text-2xl font-medium">GITA Software Use Policy</h5>
+         <div>
+            <h6 class="text-white font-medium text-lg">1. Policy Objective:</h6>
+            <p class="text-sm text-zinc-300">This policy establishes guidelines for the proper use of the GITA software, a health monitoring and Kubernetes cluster best practices service. The aim is to ensure the safety, reliability, and effectiveness of the software for all users.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">2. Definition of Terms:</h6>
+            <p class="text-sm text-zinc-300">User: Any person or entity utilizing the GITA software. GITA Software: The health monitoring and Kubernetes cluster best practices service offered by the company.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">3. Authorized Use:</h6>
+            <p class="text-sm text-zinc-300">Users are permitted to use the GITA software exclusively for monitoring, analysis, and optimization of Kubernetes clusters. The GITA software must not be used for illegal, fraudulent, or harmful purposes.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">4. User Responsibilities:</h6>
+            <p class="text-sm text-zinc-300">Users are responsible for ensuring the security of their access credentials to the GITA software. Users must immediately notify the support team in case of any suspicion of unauthorized access to their account. Users must abide by all applicable laws and regulations while using the GITA software. Users must provide accurate and up-to-date information when using the GITA software.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">5. Prohibited Use:</h6>
+            <p class="text-sm text-zinc-300">Users are not permitted to share their access credentials to the GITA software with third parties. The use of the GITA software for any activity violating the intellectual property rights of third parties is prohibited. Users must not attempt to circumvent the security measures of the GITA software in any way.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">6. Updates and Maintenance:</h6>
+            <p class="text-sm text-zinc-300">The team responsible for the GITA software reserves the right to carry out updates, scheduled maintenance, and bug fixes as necessary to ensure the quality of service. Users will be notified in advance of any planned service interruptions, whenever possible. </p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">7. Technical Support:</h6>
+            <p class="text-sm text-zinc-300">The technical support team is available to assist users with any questions, technical issues, or assistance requests related to the GITA software. Users can contact the support team through channels designated by the company.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">8. Violations:</h6>
+            <p class="text-sm text-zinc-300">Any violation of this policy may result in the suspension or termination of the user's access to the GITA software, at the company's discretion. The company reserves the right to take legal action against users engaging in unauthorized or illegal activities using the GITA software.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">9. Policy Changes:</h6>
+            <p class="text-sm text-zinc-300">This usage policy may be updated periodically by the company. Users will be notified of any changes to the usage policy through communication channels designated by the company.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">10. Policy Acceptance:</h6>
+            <p class="text-sm text-zinc-300">Users' continued use of the GITA software constitutes acceptance of the terms and conditions of this usage policy. By using the GITA software, users agree to comply with all guidelines established in this usage policy. Non-compliance with these guidelines may result in disciplinary actions, including suspension or termination of service access.</p>
+         </div>
+      </div>
+      <hr class="border-gitaGray-700 w-full">
+      <div class="flex flex-col gap-4">
+         <h5 class="text-white text-2xl font-medium">GITA Subscription or Service Cancellation Policy</h5>
+         <p class="text-sm text-zinc-300">This Subscription or Service Cancellation Policy ('Policy') establishes the procedures and guidelines for canceling subscriptions or services of GITA, a health monitoring and best practices service for Kubernetes clusters ('Service'). Our policy aims to ensure a transparent and convenient experience for our users, allowing them to cancel their subscription or service at any time, without fines or penalties.</p>
+         <div>
+            <h6 class="text-white font-medium text-lg">Pricing and Billing</h6>
+            <p class="text-sm text-zinc-300">The price of the GITA service is determined based on the usage of Kubernetes nodes per hour, for each cluster associated with the user's subscription. Kubernetes nodes are measured and summed for each hour of the monthly billing period. We do not charge a cancellation fee. Users have the right to cancel their subscription at any time, and the cancellation will take effect immediately upon user confirmation.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Monthly Billing</h6>
+            <p class="text-sm text-zinc-300">Billing for the GITA service is closed monthly. Users will be billed based on the total number of Kubernetes nodes used throughout the month.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Billing Calculation</h6>
+            <p class="text-sm text-zinc-300">Billing will be calculated by multiplying the total number of Kubernetes nodes by the price per node, as established at the time of subscription. The price per node may vary based on factors such as additional features offered or volume discounts - but always with mutual acceptance and alignment.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Subscription Cancellation</h6>
+            <p class="text-sm text-zinc-300">Users have the right to stop using the service at any time, with no additional charges. Upon subscription cancellation, access to the GITA service will be maintained until the end of the current billing period. There will be no refund of fees already paid.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Billing and Payment</h6>
+            <p class="text-sm text-zinc-300">Billing will be processed automatically based on usage data collected by the GITA system. Users must provide valid and up-to-date payment information to ensure efficient billing processing. Payment is due within the timeframe established at the time of billing. Non-payment may result in suspension or termination of the user's subscription.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Changes to Pricing and Billing Policy</h6>
+            <p class="text-sm text-zinc-300">We reserve the right to update or modify this Pricing and Billing Policy at any time, with prior notice to users. Changes to pricing or billing practices will be communicated to users in advance, and the changes will not take effect until the next billing cycle. This Pricing and Billing Policy is subject to the GITA Terms of Service. In case of conflict between this Policy and the Terms of Service, the Terms of Service shall prevail. If you have any questions or need further assistance regarding pricing and billing, please contact our customer support team. We are here to help.</p>
+         </div>
+      </div>
+      <hr class="border-gitaGray-700 w-full">
+      <div class="flex flex-col gap-4">
+         <h5 class="text-white text-2xl font-medium">GITA Subscription or Service Cancellation Policy</h5>
+         <p class="text-sm text-zinc-300">This Subscription or Service Cancellation Policy ('Policy') establishes the procedures and guidelines for canceling subscriptions or services of GITA, a health monitoring and best practices service for Kubernetes clusters ('Service'). Our policy aims to ensure a transparent and convenient experience for our users, allowing them to cancel their subscription or service at any time, without fines or penalties.</p>
+         <div>
+            <h6 class="text-white font-medium text-lg">Subscription or Service Cancellation</h6>
+            <p class="text-sm text-zinc-300">Users have the right to cancel their GITA subscription or service at any time, without the need for justification. Cancellation can be requested directly through the GITA platform or by contacting our customer support team. Cancellation will take effect immediately upon user confirmation.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Cancellation Procedure</h6>
+            <p class="text-sm text-zinc-300">To cancel their subscription or service, users must follow the instructions provided on the GITA platform or contact our support team. Users may be asked to confirm their identity or provide additional information to process the cancellation. Billing and Charging</p>
+            <p class="text-sm text-zinc-300">After cancellation, users will no longer be billed for upcoming subscription renewals or service periods. Any remaining credits or unused fees will not be refunded after cancellation. </p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Service Access after Cancellation</h6>
+            <p class="text-sm text-zinc-300">After cancellation of the subscription or service, users will retain access to GITA until the end of the current billing period. After the end of the current billing period, access to the Service will be terminated, and users will no longer be able to utilize GITA resources unless they choose to reactivate their subscription.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Reactivation of Subscription or Service</h6>
+            <p class="text-sm text-zinc-300">Users have the option to reactivate their GITA subscription or service at any time by following the reactivation procedures provided on the platform or by contacting our customer support team. Reactivation may be subject to additional terms and conditions, including but not limited to price changes or resource availability.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Policy Changes</h6>
+            <p class="text-sm text-zinc-300">We reserve the right to update or modify this Subscription or Service Cancellation Policy at any time, with prior notice to users. We recommend that users periodically review this Policy to be aware of any changes. This Subscription or Service Cancellation Policy is subject to the GITA Terms of Service. In case of conflict between this Policy and the Terms of Service, the Terms of Service shall prevail. If you have any questions or need additional assistance regarding the cancellation of your subscription or service, please contact our customer support team. We are here to help.</p>
+         </div>
+      </div>
+      <hr class="border-gitaGray-700 w-full">
+      <div class=" flex flex-col gap-4">
+         <h5 class="text-white text-2xl font-medium">Compliance with the General Data Protection Law - Federal Law 13.09/201</h5>
+         <p class="text-sm text-zinc-300">Please read our Privacy and Data Protection Policy carefully to understand our practices regarding the treatment of your Personal Data. This Policy applies to individuals who interact with our services in various ways. This Policy explains how your Personal Data is collected and used.</p>
+         <p class="text-sm text-zinc-300">It also informs how you can access and update your Personal Data, and exercise your rights regarding them.</p>
+         <p class="text-sm text-zinc-300">We want you to be aware of the key concepts of the LGPD (General Data Protection Law - Federal Law 13.09/2018) and how Jack Experts handles your personal data, so that you understand and can fully exercise your rights. Check out our Privacy Policy!</p>
+         <p class="text-sm text-zinc-300">For us at Jack Experts, privacy and security are priorities, and we are committed to the transparency of the treatment of personal data of our users, clients, employees, partners, and suppliers. Therefore, our Privacy Policy establishes how information is collected and used.</p>
+         <p class="text-sm text-zinc-300">By using our services, you understand that we collect and use your personal information as described in this Policy, under Data Protection standards (LGPD, Federal Law 13.709/2018), consumer provisions of Federal Law 8.078/1990, and other applicable Brazilian legal norms.</p>
+         <p class="text-sm text-zinc-300">This Policy may be amended periodically, as informed in item 10.</p>
+         <p class="text-sm text-zinc-300">This Policy provides important information about how we treat your Personal Data, such as:</p>
+         <h6 class="text-white font-medium text-lg">1 - WHAT YOU NEED TO KNOW BEFORE READING THIS NOTICE?</h6>
+         <p class="text-sm text-zinc-300">Pricing and Billing</p>
+         <p class="text-sm text-zinc-300">The price of the GITA service is determined based on the usage of Kubernetes nodes per hour, for each cluster associated with the user's subscription. Kubernetes nodes are measured and summed for each hour of the monthly billing period. We do not charge a cancellation fee. Users have the right to cancel their subscription at any time, and the cancellation will take effect immediately upon user confirmation.</p>
+         <p class="text-sm text-zinc-300">Monthly Billing</p>
+         <h6 class="text-white font-medium text-lg">2. YOUR RIGHTS AS DATA SUBJECT</h6>
+         <p class="text-sm text-zinc-300">As a data subject, through the email address renata@jackexperts.com.br, you may request the exercise of the following rights regarding your data.</p>
+         <h6 class="text-white font-medium text-lg">2.1 Right of confirmation of the existence of treatment, access, correction of personal data</h6>
+         <p class="text-sm text-zinc-300">You can request confirmation of the existence of treatment of your data. For example, because you are not sure if you submitted your information to participate in a course, receive newsletters, or apply for a job, or because you would like to know if someone referred you for a job opportunity.</p>
+         <p class="text-sm text-zinc-300">Once the existence of treatment is confirmed, you may request access to the data. If you find that they are incomplete, inaccurate, or outdated, you may request correction or deletion. It is your responsibility to keep your data up to date. </p>
+         <h6 class="text-white font-medium text-lg">2.2 Right to Anonymization, blocking or deletion of unnecessary, excessive or data treated in non-compliance with the legislation</h6>
+         <p class="text-sm text-zinc-300">If you believe that your data is being processed unnecessarily, excessively, or in non-compliance with the law, you may contact us and request, alternatively, anonymization, blocking, or deletion of this data.</p>
+         <p class="text-sm text-zinc-300">We will receive your request and conduct a thorough analysis of your case to inform you how we will proceed.</p>
+         <h6 class="text-white font-medium text-lg">2.3 Right to data portability</h6>
+         <p class="text-sm text-zinc-300">You may request us an electronic copy of your personal data, including portability of your data to another company, by delivering a file in interoperable format.</p>
+         <h6 class="text-white font-medium text-lg">2.4 Right to deletion of personal data treated with the legal basis of consent</h6>
+         <p class="text-sm text-zinc-300">In principle, for the activities described in this Privacy Policy, we use the legal basis of consent and legitimate interest. </p>
+         <h6 class="text-white font-medium text-lg">2.5 Information rights on non-provision of consent and the consequences of refusal and the Right to Withdraw Consent</h6>
+         <p class="text-sm text-zinc-300">Data processing activities indicated in this Privacy Policy are based on the legal basis of consent and legitimate interest. However, if you receive a new Privacy Notice about updating the terms, or informing about a new purpose for processing your data, and you are asked for consent, you will be informed about the possible consequences of not consenting. You will also be informed that you may withdraw your consent at any time.</p>
+         <h6 class="text-white font-medium text-lg">2.6 Information on data sharing</h6>
+         <p class="text-sm text-zinc-300">Whenever there is shared use of your data with public or private entities, you will be informed about this treatment. </p>
+         <h6 class="text-white font-medium text-lg">2.7 Right to object</h6>
+         <p class="text-sm text-zinc-300">You may object to treatment performed on the basis of one of the dispensation hypotheses for consent, in case of non-compliance with the provisions of the legislation on Privacy and Personal Data Protection. </p>
+         <h6 class="text-white font-medium text-lg">2.8 Right to review of fully automated decisions</h6>
+         <p class="text-sm text-zinc-300">You have the right to request a review of decisions made solely based on automated processing of personal data that affect your interests, including decisions aimed at defining your personal, professional, consumer, and credit profile or aspects of your personality.</p>
+         <p class="text-sm text-zinc-300">We will provide you, whenever requested, clear and adequate information about the criteria and procedures used for automated decision-making, observing our trade secrets and industrial secrets.</p>
+         <h6 class="text-white font-medium text-lg">3. PERSONAL DATA YOU PROVIDE TO US DIRECTLY</h6>
+         <p class="text-sm text-zinc-300">For all other pages of the website, during your access to the pages, we will treat your personal data as indicated below, based on our legitimate interest in supporting and promoting our activities, always respecting the data subject's right to express their interest in no longer receiving content.</p>
+         <h6 class="text-white font-medium text-lg">4. PERSONAL IDENTIFICATION DATA THAT WE COLLECT WHEN YOU VISIT OUR SITE</h6>
+         <p class="text-sm text-zinc-300">We collect browsing behavior information and about your interaction on our website (https://jackexperts.com) in order to optimize the functionalities and improve the quality of the content provided, all in accordance with our legitimate interest. To do so, we use Google Analytics on all our pages.</p>
+         <p class="text-sm text-zinc-300">Google Analytics is a technology service that helps us better understand our users' experience and allows us to build, maintain, and improve our service with user feedback.</p>
+         <p class="text-sm text-zinc-300">Google Analytics uses cookies and other technologies to collect data about the browsing metadata of our users and their devices. This includes a device IP address (processed during your session and stored in an unidentified form), browser information, geographic location (country only), and the preferred language used to display our website. </p>
+         <p class="text-sm text-zinc-300">Google Analytics stores this information on our behalf in a pseudonymous user profile and is contractually prohibited from selling any of the data collected on our behalf. Its functions are performed only on the website, without any influence on the application. </p>
+         <p class="text-sm text-zinc-300">For these services to work, we need to install some cookies, that is, small text files sent by the WEB server to the browser containing data necessary for navigation, identification, and/or preferences.</p>
+         <p class="text-sm text-zinc-300">You can disable them through your browser settings, however, your browsing experience may be impaired, and therefore, we cannot guarantee that you will view the content of your interest.</p>
+         <h6 class="text-white font-medium text-lg">5. OUR PERSONAL DATA OPERATORS</h6>
+         <p class="text-sm text-zinc-300">In order for us to process the data for the purposes stated above, we often need to rely on the services of third-party companies, which perform an activity according to our instructions. We call this service provider a PERSONAL DATA OPERATOR.</p>
+         <p class="text-sm text-zinc-300">We use operators to perform the following activities: website hosting; managing data collection and newsletter sending, as well as managing your job application. If you would like more information about our Operators, please contact us via email at renata@jackexperts.com.</p>
+         <h6 class="text-white font-medium text-lg">6. HOW LONG ARE THE INFORMATION STORED?</h6>
+         <p class="text-sm text-zinc-300">JAC strives to ensure that personal data is kept as up-to-date as possible and that irrelevant or excessive data is deleted or anonymized as soon as possible. </p>
+         <p class="text-sm text-zinc-300">Generally, we retain personal data for as long as necessary to fulfill the purpose for which it was collected. </p>
+         <p class="text-sm text-zinc-300">If you do not request deletion, your personal data provided during the recruitment and selection stage will remain stored with us until the purposes presented in this Privacy Policy are achieved, in accordance with the applicable legislation in Brazil.</p>
+         <p class="text-sm text-zinc-300">Before the indicated deadline, we will send you an email giving you the opportunity to express your interest in keeping your data with us to continue receiving content of your interest. </p>
+         <h6 class="text-white font-medium text-lg">7.  DISCLOSURE OF PERSONAL DATA</h6>
+         <p class="text-sm text-zinc-300">Your personal data may be accessed internally by our team, so that we can fulfill the purpose informed in the previous topics. Eventually, your data may also be accessed by system administrators.</p>
+         <p class="text-sm text-zinc-300">Your data may be processed by some of our OPERATORS, that is, companies that process data on our behalf, according to our instructions, as indicated in item 4.</p>
+         <p class="text-sm text-zinc-300">In addition, we may share personal data with national authorities, in order to comply with a legal obligation to which we aresubject, or by judicial decision.</p>
+         <h6 class="text-white font-medium text-lg">8.  INFORMATION SECURITY</h6>
+         <p class="text-sm text-zinc-300">We are committed to the mission of always making the best efforts to respect and protect your personal information against loss, theft, or any form of misuse, applying necessary technical and organizational security measures to protect your personal data. </p>
+         <p class="text-sm text-zinc-300">Access to your information will be restricted only to those employees or service providers who, in order to operate, develop, or improve the services, need access to such information.</p>
+         <p class="text-sm text-zinc-300">According to our culture and conduct, we are protectors of all information! Therefore, we reaffirm this commitment to your security and privacy. </p>
+         <h6 class="text-white font-medium text-lg">9. WHAT DO WE DO TO KEEP YOUR DATA SECURE?</h6>
+         <p class="text-sm text-zinc-300">To keep your personal information secure, we use physical, electronic, and managerial tools oriented to protect your privacy.</p>
+         <p class="text-sm text-zinc-300">We apply these tools considering the nature of the personal data collected, the context and purpose of the processing, and the risks that any breaches may pose to the rights and freedoms of the data subject collected and processed.</p>
+         <p class="text-sm text-zinc-300">Among the measures we adopt, we highlight the following:</p>
+         <p class="text-sm text-zinc-300">Only authorized personnel have access to your personal data.</p>
+         <p class="text-sm text-zinc-300">Access to your personal data is granted only after commitment to confidentiality and data protection. </p>
+         <p class="text-sm text-zinc-300">Your personal data is stored in a secure and reputable environment.</p>
+         <p class="text-sm text-zinc-300">Jack Experts undertakes to adopt the best practices to prevent security incidents. However, it is necessary to highlight that no virtual service is entirely secure and risk-free. It is possible that, despite all our security protocols, problems exclusively caused by third parties may occur, such as cyberattacks by crackers, or also due to the negligence or recklessness of the user/client themselves.</p>
+         <p class="text-sm text-zinc-300">In case of security incidents that may generate relevant risk or damage to you or any of our users/clients, we will communicate to the affected parties and the National Data Protection Authority about the incident, in accordance with the provisions of the General Data Protection Law.</p>
+         <h6 class="text-white font-medium text-lg">10. DATA RELATED TO PROJECTS EXECUTED BY Jack Experts IN CLIENTS</h6>
+         <p class="text-sm text-zinc-300">All project data is confidential and respects the rules outlined in the contract between Jack Experts and its CLIENT. </p>
+         <p class="text-sm text-zinc-300">11. AMENDMENT OF THIS PRIVACY POLICY</p>
+         <p class="text-sm text-zinc-300">The current version of the Privacy Policy was formulated and last updated on 09/27/2021.</p>
+         <p class="text-sm text-zinc-300">We reserve the right to modify this Privacy Policy at any time, mainly due to adjustments to any changes made in our system or in the legislative scope. We recommend that you review it frequently.</p>
+         <p class="text-sm text-zinc-300">Any changes will take effect upon their publication on our system, and we will always notify you of any changes that occur.</p>
+         <p class="text-sm text-zinc-300">By using our services and providing your personal data after such modifications, you consent to them.</p>
+         <h6 class="text-white font-medium text-lg">12. RESPONSIBILITY</h6>
+         <p class="text-sm text-zinc-300">Jack Experts foresees the responsibility of the agents who act in the data processing processes, in accordance with articles 42 to 45 of the General Data Protection Law.</p>
+         <p class="text-sm text-zinc-300">We commit to keeping this Privacy Policy updated, observing its provisions and ensuring its compliance.</p>
+         <p class="text-sm text-zinc-300">Additionally, we also undertake to seek technically secure conditions capable of protecting the entire data processing process.</p>
+         <h6 class="text-white font-medium text-lg">12.1 Disclaimer</h6>
+         <p class="text-sm text-zinc-300">As mentioned in Topic 9, although we adopt high security standards to prevent incidents, no virtual service is entirely risk-free. In this sense, Jack Experts is not responsible for:</p>
+         <p class="text-sm text-zinc-300">I – Any consequences arising from the negligence, recklessness, or incompetence of users regarding their individual data. We guarantee and are responsible only for the security of the data processing processes and for fulfilling the purposes described in this document. We emphasize that the responsibility for the confidentiality of access data lies with the user.</p>
+         <p class="text-sm text-zinc-300">II – Malicious actions by third parties, such as cracker attacks, except in cases of proven negligent or deliberate conduct by Jack Experts. We emphasize that in the event of security incidents that may generate relevant risk or damage to you or any of our users/clients, we will notify the affected parties and the National Data Protection Authority about the incident and comply with the necessary measures.</p>
+         <p class="text-sm text-zinc-300">III – The inaccuracy of the information entered by the user/client in the records necessary for the use of Jack Experts' services; any consequences arising from false or maliciously inserted information are the sole responsibility of the user/client. </p>
+         <h6 class="text-white font-medium text-lg">13. DATA PROTECTION OFFICER</h6>
+         <p class="text-sm text-zinc-300">Jack Experts provides the following means for you to contact us to exercise your rights as a data subject: Email: renata@jackexperts.com.br</p>
+         <p class="text-sm text-zinc-300">If you have any questions about this Privacy Policy or about the personal data we process, you can contact our Data Protection Officer through the following channels:</p>
+         <p class="text-sm text-zinc-300">Data Protection Officer: Renata Silva Email: renata@jackexperts.com.br</p>
+      </div>
+      <hr class="border-gitaGray-700 w-full">
+      <div class="flex gap-4 flex-col">
+         <h5 class="text-white text-2xl font-medium">Cookie Usage Policy for GITA</h5>
+         <p class="text-sm text-zinc-300">This Cookie Usage Policy ('Policy') is intended to inform users ('Users', 'You') about the use of cookies by our software GITA, a health tracking and best practices service for Kubernetes clusters ('Service'). This Policy explains what cookies are, how we use them, and your choices related to these cookies.</p>
+         <div>
+            <h6 class="text-white font-medium text-lg">What are cookies?</h6>
+            <p class="text-sm text-zinc-300">We are committed to keeping this Privacy Policy updated, observing its provisions and ensuring its compliance.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">How do we use cookies?</h6>
+            <p class="text-sm text-zinc-300">We use cookies for various purposes related to improving the functioning and user experience of our Service. This includes, but is not limited to:</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Necessary Cookies:</h6>
+            <p class="text-sm text-zinc-300">These cookies are essential for you to navigate our Service and use its features. Without these cookies, some parts of the Service may not function properly. </p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Performance Cookies:</h6>
+            <p class="text-sm text-zinc-300">These cookies help us understand how visitors interact with our Service by providing information about visited areas, time spent on the Service, and any encountered issues, such as error messages. This allows us to improve the performance of the Service.</p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Functionality Cookies:</h6>
+            <p class="text-sm text-zinc-300">These cookies allow our Service to remember choices you have made (such as username, language, or region) and provide enhanced and personalized features. </p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Your choices regarding cookies</h6>
+            <p class="text-sm text-zinc-300">By using our Service, you agree to the use of cookies in accordance with this Policy. However, you have the right to control the use of cookies. You can:</p>
+            <p class="text-sm text-zinc-300">Configure your browser to refuse all or some cookies. However, if you disable or refuse cookies, some parts of the Service may become inaccessible or not function properly. Delete previously stored cookies on your device at any time. Configure your browser to notify you when a cookie is sent, allowing you todecide whether to accept it or not. Changes to this Policy We may update this Cookie Usage Policy from time to time. Any  significant changes will take effect immediately upon the publication of the revised Policy. We recommend that you periodically review this page to be aware of any changes. </p>
+         </div>
+         <div>
+            <h6 class="text-white font-medium text-lg">Contact</h6>
+            <p class="text-sm text-zinc-300">If you have any questions about this Policy or the use of cookies in our Service, please contact us through the contact information provided on our contact page.</p>
+            <p class="text-sm text-zinc-300">By continuing to use our Service, you agree to the use of cookies in accordance with this Policy. If you do not agree with the use of cookies described in this Policy, please do not continue to use our Service.</p>
+         </div>
+      </div>
+   </section>
+</div>
+
+  <footer class="bg-gray-900 text-white py-[70px]" style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <div class="flex flex-col gap-2 items-start">
+        <img src="img/logo-gita-white.svg" width="120"/>
+        <small class="text-left mb-6" data-i18n="footer.description">Acompanhe seus servidores e clusters Kubernetes a faça gestão de incidentes e boas práticas.</small>
+        
+        <div class="flex flex-col rounded-md bg-gray-700 px-4 py-3 gap-1">
+          <small class="text-gray-100">Powered by Jack Experts</small>
+          <a href="https://jackexperts.com" target="_blank"><img src="img/logo-jackexperts.png" width="100"/></a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2 items-start">
+        <h3 class="text-lg font-semibold mb-4" data-i18n="footer.gita">Gita</h3>
+        <ul class="list-none space-y-2 text-left">
+          <li><a href="https://gitacloudteam.github.io/lp/#about" class="text-gray-300 hover:text-white" data-i18n="footer.about">O que é o GITA?</a></li>
+          <li><a href="https://gitacloudteam.github.io/lp/#questions" class="text-gray-300 hover:text-white" data-i18n="footer.faq">Perguntas Frequentes</a></li>
+          <li><a onclick="openPolicy()" class="text-gray-300 hover:text-white" data-i18n="footer.policy">Política</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-2 items-start">
+        <h3 class="text-lg font-semibold mb-4" data-i18n="footer.resources">Recursos</h3>
+        <ul class="list-none space-y-2 text-left">
+          <li><a href="https://doc.gita.cloud/" class="text-gray-300 hover:text-white" data-i18n="footer.documentation">Documentação</a></li>
+          <li><a href="https://gitacloudteam.github.io/lp/#help" class="text-gray-300 hover:text-white" data-i18n="footer.help_support">Ajuda e Suporte</a></li>
+          <li><a href="https://gitacloudteam.github.io/lp/#contact" class="text-gray-300 hover:text-white" data-i18n="footer.contact">Contato</a></li>
+          <li><a href="https://gitacloudteam.github.io/lp/#pricing" class="text-gray-300 hover:text-white" data-i18n="footer.pricing">Preço</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-2 items-start">
+        <h3 class="text-lg font-semibold mb-4" data-i18n="footer.contact">Contato</h3>
+
+        <a href="tel:+5561992736646" class="flex flex-row gap-1 items-center">
+          <i data-lucide="phone" class="h-4 min-w-4 w-4 text-orange-500"></i>
+          <p class="text-white hover:underline">(61) 99273-6646</p>
+        </a>
+
+        <a href="mailto:contato@jackexperts.com.br" class="flex flex-row gap-1 items-center">
+          <i data-lucide="mail" class="h-4 min-w-4 w-4 text-orange-500"></i>
+          <p class="text-white hover:underline">contato@jackexperts.com.br</p>
+        </a>
+
+        <a href="https://maps.app.goo.gl/DnSbDzYLUcy7g8T36" target="_blank" class="flex flex-row gap-1 items-center">
+          <i data-lucide="pin" class="h-4 min-w-4 w-4 text-orange-500"></i>
+          <p class="text-white hover:underline leading-tight text-left">SCRS 516, Bloco B, Nº 69, Asa Sul, CEP: 70.381-525, Brasília/DF</p>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/languageSelector.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/lucidIcons.js"></script>
+  <script src="js/openPolicy.js"></script>
+
+</body>
+</html>
