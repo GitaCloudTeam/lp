@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form");
     const status = document.getElementById("form-status");
-    debugger;
 
     form.addEventListener("submit", async (e) => {
-        debugger;
         e.preventDefault();
 
         const nome = document.getElementById("nome").value.trim();
@@ -29,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch("https://formoid.net/api/push", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Headers": "Content-Type",
                 },
                 body: JSON.stringify(payload)
             });

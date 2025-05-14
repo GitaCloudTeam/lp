@@ -208,7 +208,15 @@
     }
   }
 
-  #footer * {
+  footer * {
     font-family: 'Inter', sans-serif;
     text-align: left;
+  }
+
+  footer a {
+    cursor: pointer;
+  }
+
+  footer a:hover {
+    text-decoration: underline !important;
   }

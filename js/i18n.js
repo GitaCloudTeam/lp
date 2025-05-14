@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", async function () {
 async function setLanguage(lang) {
     const langMenu = document.getElementById("langMenu");
     langMenu.classList.add("hidden");
@@ -44,3 +45,4 @@ async function setLanguage(lang) {
   const savedLang = localStorage.getItem("lang") || "pt";
 
   setLanguage(savedLang);
+});
