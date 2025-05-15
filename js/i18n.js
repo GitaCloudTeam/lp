@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", async function () {
 async function setLanguage(lang) {
     const langMenu = document.getElementById("langMenu");
     langMenu.classList.add("hidden");
@@ -44,5 +43,6 @@ async function setLanguage(lang) {
   // Carrega o idioma salvo (ou pt por padrão)
   const savedLang = localStorage.getItem("lang") || "pt";
 
+document.addEventListener("DOMContentLoaded", async function () {
   setLanguage(savedLang);
 });

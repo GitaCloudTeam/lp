@@ -15,98 +15,128 @@
   <meta name="description" content="Gita - Encontre soluções para incidentes, problemas e eventos Kubernetes. Aprenda como gerenciar Kubernetes de maneira eficaz com a Gita.">
   <meta name="keywords" content="Gita, Kubernetes, gerenciamento, monitoramento, observabilidade, incidentes, problemas, segurança, eventos">
 
-  <script src="js/cardsToggleFunctionality.js"></script>
+  <script type="text/javascript" src="js/cardsToggleFunctionality.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/smoothScroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
 
   <!-- Ícones -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-[#0b0f19] text-gray-800 relative">
 
-  <div id="header-placeholder"></div>
-
   <!-- Navbar -->
-  <header class="shadow-sm absolute top-0 left-0 right-0 m-auto">
-    <div class="px-[8%] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 space-x-6">
+  <header class="shadow-sm absolute top-0 left-0 right-0 m-auto bg-transparent z-50">
+    <div class="px-4 sm:px-2 lg:px-4 mx-auto max-w-7xl">
+      <div class="flex justify-between items-center h-16">
         <!-- Logo -->
         <div class="flex flex-1">
-          <a href="#" class="text-2xl font-bold text-indigo-600">
-            <img src="img/logo-gita-white.svg" width="120"/>
+          <a href="https://gitacloudteam.github.io/lp/" class="text-2xl font-bold text-indigo-600">
+            <img src="img/logo-gita-white.svg" width="120" class="min-w-[80px]" />
           </a>
         </div>
-  
-        <!-- Navegação -->
-        <nav class="hidden md:flex space-x-6">
+
+        <!-- Botão Hambúrguer -->
+        <div class="md:hidden flex flex-row gap-2 flex-grow justify-end">
+          <a href="https://app.gita.cloud/" target="_blank" onclick="toggleMenu()" class="gita-button gita-button-sm gita-button__secondary" data-i18n="menu.login">Login</a>
+          <a href="https://app.gita.cloud/register" target="_blank" onclick="toggleMenu()" class="gita-button gita-button-sm gita-button__primary" data-i18n="menu.signup">Começar Agora</a>
+
+          <button id="menu-toggle" class="text-white hover:text-gray-300 focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+        <!-- Navegação principal (desktop) -->
+        <nav class="hidden md:flex space-x-6 flex-1 justify-center">
           <a href="#home" class="gita-menu-item" data-i18n="menu.home"></a>
           <a href="#about" class="gita-menu-item" data-i18n="menu.about"></a>
           <a href="#pricing" class="gita-menu-item" data-i18n="menu.pricing"></a>
           <a href="#contact" class="gita-menu-item" data-i18n="menu.contact"></a>
           <a href="https://doc.gita.cloud" class="gita-menu-item" data-i18n="menu.docs"></a>
         </nav>
-  
+
         <!-- Ações -->
-        <div class="flex flex-1 items-center justify-end space-x-4">
-          <!-- Dropdown de Idioma -->
+        <div class="hidden md:flex flex-1 items-center justify-end space-x-4">
+          <!-- Idioma -->
           <div class="relative inline-block text-left">
-            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center w-full rounded-md shadow-sm px-2 py-1 bg-transparent text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
+            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center px-2 py-1 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
               <i data-lucide="globe" class="h-4 w-4"></i>
               <span id="langButtonSpan" class="uppercase">PT</span>
               <i data-lucide="chevron-down" class="h-4 w-4"></i>
             </button>
-
-            <div id="langMenu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5">
-              <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="langButton">
-                <button onclick="setLanguage('pt')" data-lang="pt" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
-                <button onclick="setLanguage('en')" data-lang="en" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>
+            <div id="langMenu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
+              <div class="py-1">
+                <button onclick="setLanguage('pt')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
+                <button onclick="setLanguage('en')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>
               </div>
             </div>
           </div>
 
-          <a href="https://app.gita.cloud/" target="_blank" class="gita-button gita-button__secondary" data-i18n="menu.login">
-            Login
-          </a>
-  
-          <!-- CTA -->
-          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary" data-i18n="menu.signup">
-            Começar Agora
-          </a>
+          <!-- Botões Desktop -->
+          <a href="https://app.gita.cloud/" target="_blank" class="gita-button gita-button__secondary" data-i18n="menu.login">Login</a>
+          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary" data-i18n="menu.signup">Começar Agora</a>
         </div>
       </div>
     </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 py-4 bg-gray-800 rounded border border-gray-700">
+      <nav class="flex flex-col gap-4 items-center justify-center">
+        <a href="#home" onclick="toggleMenu()" class="gita-menu-item" data-i18n="menu.home"></a>
+        <a href="#about" onclick="toggleMenu()" class="gita-menu-item" data-i18n="menu.about"></a>
+        <a href="#pricing" onclick="toggleMenu()" class="gita-menu-item" data-i18n="menu.pricing"></a>
+        <a href="#contact" onclick="toggleMenu()" class="gita-menu-item" data-i18n="menu.contact"></a>
+        <a href="https://doc.gita.cloud" onclick="toggleMenu()" class="gita-menu-item" data-i18n="menu.docs"></a>
+
+        <a href="https://app.gita.cloud/" target="_blank" class="gita-button gita-button__secondary" data-i18n="menu.login">Login</a>
+        <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button__primary" data-i18n="menu.signup">Começar Agora</a>
+      </nav>
+    </div>
   </header>
+
 
   
   <!-- Hero Section -->
   <section style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
-    <header id="home" class="flex flex-row min-h-[600px] pt-[120px] pb-[70px] px-[4%] gap-4">
+    <header id="home" class="flex flex-col lg:flex-row min-h-[600px] pt-[120px] pb-[70px] px-[4%] gap-4">
+      
+      <!-- Lado esquerdo: texto -->
       <div class="flex flex-col justify-center flex-1 mx-auto px-4 text-left gap-3">
-        <!-- Mascote da girafa -->
         <div class="flex flex-col gap-0">
-          <h1 class="font-bold font-[sora] leading-[0.9em] mb-0 text-white text-[48px]" data-i18n="hero.title_part1">Acompanhe</h1>
+          <h1 class="font-bold font-[sora] leading-[0.9em] mb-0 text-white text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px]" data-i18n="hero.title_part1">Acompanhe</h1>
           <h1 class="mb-0">
-            <span id="dynamicText" class="typewriter"></span><span class="cursor">|</span>
+            <span id="dynamicText" class="typewriter text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px]"></span><span class="cursor">|</span>
           </h1>
-          <h1 class="font-bold font-[sora] leading-[0.9em] mb-4 text-white text-[48px]" data-i18n="hero.title_part2">dos seus clusters Kubernetes</h1>
+          <h1 class="font-bold font-[sora] leading-[0.9em] mb-4 text-white text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px]" data-i18n="hero.title_part2">dos seus clusters Kubernetes</h1>
         </div>
-        <p class="text-slate-300 text-xl" data-i18n="hero.subtitle">Obtenha uma visão horizontal de todos os clusters Kubernetes em um só lugar</p>
-        <p class="text-slate-300" data-i18n="hero.multicluster_multicloud">Multicluster | Multicloud</p>
 
-        <div class="flex flex-row gap-4 items-center mt-6">
-          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button-lg gita-button__primary">
+        <p class="text-slate-300 text-base sm:text-lg md:text-xl" data-i18n="hero.subtitle">
+          Obtenha uma visão horizontal de todos os clusters Kubernetes em um só lugar
+        </p>
+        <p class="text-slate-300 text-sm sm:text-base" data-i18n="hero.multicluster_multicloud">
+          Multicluster | Multicloud
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center mt-6">
+          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button-lg gita-button__primary w-full md:w-auto">
             <span data-i18n="hero.cta_start">Começar Agora</span>
           </a>
-          <a href="#about" class="gita-button gita-button-lg gita-button__transparent">
+          <a href="#about" class="gita-button gita-button-lg gita-button__transparent w-full md:w-auto">
             <i data-lucide="move-down" class="h-6 w-6"></i>
-            <span data-i18n="hero.cta_learn_more">
-              Saiba mais
-            </span>
+            <span data-i18n="hero.cta_learn_more">Saiba mais</span>
           </a>
         </div>
       </div>
-      <div class="flex flex-col flex-1 items-center justify-center">
-        <img src="img/dalle.webp" alt="Mascote Girafa" height="500" />
+
+      <!-- Lado direito: imagem -->
+      <div class="flex flex-col flex-1 items-center justify-center mt-4 lg:mt-0">
+        <img src="img/dalle.webp" alt="Mascote Girafa" class="tilt-img max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]" />
       </div>
+      
     </header>
+  </section>
+
 
     <!-- Seção: O que é o GITA -->
     <!-- Seção 2: O que é o GITA? -->
@@ -194,7 +224,7 @@
     <div class="container mx-auto px-4 py-[70px]">
         <div class="flex max-lg:flex-col gap-10">
             <div class="w-[45%] space-y-4 max-lg:w-full" id="text-container">
-              <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4 text-gray-100" data-i18n="title">
+              <h2 class="text-3xl font-extrabold tracking-tight text-center md:text-left sm:text-4xl mb-4 text-gray-100" data-i18n="title">
                 Gerencie e otimize o seu Kubernetes
               </h2>
               <div class="w-full flex flex-col gap-2" id="card-container">
@@ -224,9 +254,9 @@
                   </div>
               </div>
             </div>
-            <div class="w-[55%] flex flex-col flex items-center justify-center mt-auto gap-[30px]" id="image-container">
+            <div class="w-full md:w-[55%] flex flex-col flex items-center justify-center mt-auto gap-[30px]" id="image-container">
 
-                <p class="text-muted-foreground min-h-[110px] text-[18px] leading-tight text-gray-100" id="description-text" data-i18n="defaultLongText">
+                <p class="text-muted-foreground min-h-[110px] text-[18px] leading-tight text-gray-100 text-center md:text-left" id="description-text" data-i18n="defaultLongText">
                     The timeline functionality displays an interactive timeline of all events in your Kubernetes cluster,
                     including incidents, changes, and issues. It makes it easy to track the sequence of events and quickly
                     identify root causes of failures or unexpected changes in the system.
@@ -248,9 +278,9 @@
   </section>
 
   <!-- Seção 3 CTA -->
-  <section class="p-12 bg-gradient-to-r from-[#0E0D12] to-[#0C0B10]">
+  <section class="p-4 md:p-12 bg-gradient-to-r from-[#0E0D12] to-[#0C0B10]">
     <div class="bg-gradient-to-r from-yellow-400 to-orange-500 py-12 rounded-xl">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[95%] md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col">
           <h2 class="text-3xl font-extrabold text-black tracking-tight sm:text-4xl text-center" data-i18n="cta.try_title">
             Quer testar o GITA?
@@ -258,15 +288,15 @@
           <p class="mt-3 text-lg text-gray-950 font-medium text-center" data-i18n="cta.try_subtitle">
             Você pode começar agora mesmo. Você receberá 15 dias gratuitos.
           </p>
-          <div class="mt-6 flex flex-row items-center justify-center gap-4">
-            <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button-lg gita-button__black">
+          <div class="mt-6 flex flex-col md:flex-row items-center justify-center gap-4">
+            <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button-lg gita-button__black w-full md:w-auto">
               <i data-lucide="square-arrow-out-up-right" class="h-6 w-6"></i>
               <span data-i18n="cta.try_button">Iniciar teste</span>
             </a>
 
-            <a href="#contact" class="gita-button gita-button-lg gita-button__white">
+            <a href="#contact" class="gita-button gita-button-lg gita-button__white w-full md:w-auto">
               <i data-lucide="square-pen" class="h-6 w-6"></i>
-              <span data-i18n="cta.contact">Fale conosco</span>
+              <span data-i18n="cta.contact" class="text-[16px] md:text-[18px]">Fale conosco</span>
             </a>
           </div>
         </div>
@@ -277,15 +307,15 @@
   <!-- Seção 4 Problemas-->
   <section class="py-16 bg-zinc-950 text-white">
     <div class="max-w-7xl mx-auto px-4 py-[60px]">
-      <div class="flex flex-row items-center justify-center items-center gap-10">
+      <div class="flex flex-col md:flex-row items-center justify-center items-center gap-10">
         <div class="lg:w-1/2 mb-8 lg:mb-0">
           <img src="img/prints/print_dashboard_gita.png" alt="" class="border-b border-gray-700" />
         </div>
         <div class="lg:w-1/2">
-          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4 text-gray-100" data-i18n="problems.title">
+          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4 text-gray-100 text-center md:text-left" data-i18n="problems.title">
             Quais problemas o GITA ajuda você a resolver?
           </h2>
-          <p class="text-lg text-gray-300 mb-6 text-xl leading-tight" data-i18n="problems.description">
+          <p class="text-lg text-gray-300 mb-6 text-xl leading-tight text-center md:text-left" data-i18n="problems.description">
             O GITA foi criado para lidar com os desafios reais do dia a dia de clusters Kubernetes, indo muito além do monitoramento tradicional.
           </p>
           <div class="flex flex-col gap-4 text-gray-300">
@@ -323,7 +353,7 @@
             </div>
           </div>
 
-          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button-lg gita-button__primary mt-10">
+          <a href="https://app.gita.cloud/register" target="_blank" class="gita-button gita-button-lg gita-button__primary mt-10 w-full md:w-auto">
             <span data-i18n="hero.cta_start">Começar Agora</span>
           </a>
         </div>
@@ -343,9 +373,9 @@
       </p>
   
       <div class="space-y-24 mt-24">
-        <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center">
+        <div class="md:grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8 md:items-center">
           <div class="md:col-span-1">
-            <img src="img/prints/print_eventos_gita.webp" alt="" class="rounded-lg shadow-lg w-full h-auto" />
+            <img src="img/prints/print_eventos_gita.webp" alt="" class="rounded-lg shadow-lg w-full h-auto mb-4 md:mb-0" />
           </div>
           <div class="flex flex-col gap-4">
             <h3 class="text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.events_title">Eventos</h3>
@@ -363,10 +393,10 @@
   
         <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center md:grid-flow-row-dense">
           <div class="md:col-span-1 md:order-2">
-            <img src="img/prints/print_rastreio_gita.webp" alt="" class="rounded-lg shadow-lg w-full h-auto" />
+            <img src="img/prints/print_rastreio_gita.webp" alt="" class="rounded-lg shadow-lg w-full h-auto mb-4 md:mb-0" />
           </div>
           <div class="md:col-span-1 md:order-1 flex flex-col gap-4">
-            <h3 class="text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.graph_title">Descubra onde o problema aconteceu</h3>
+            <h3 class="text-2xl md:text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.graph_title">Descubra onde o problema aconteceu</h3>
             <p class="text-gray-300 mb-4 text-xl leading-tight font-light text-justify" data-i18n="features_showcase.graph_description">
               Localize precisamente a origem dos problemas em seu ambiente Kubernetes com nossa visualização em formato de grafo. Identifique rapidamente a raiz dos erros através de uma visão completa dos seus recursos e suas relações.
             </p>
@@ -381,10 +411,10 @@
   
         <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center">
           <div class="md:col-span-1">
-            <img src="img/prints/print_monitoramento_gita.png" alt="" class="rounded-lg shadow-lg w-full h-auto" />
+            <img src="img/prints/print_monitoramento_gita.png" alt="" class="rounded-lg shadow-lg w-full h-auto mb-4 md:mb-0" />
           </div>
           <div class="md:col-span-1 flex flex-col gap-4">
-            <h3 class="text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.metrics_title">Monitoramento e Alertas de Recursos</h3>
+            <h3 class="text-2xl md:text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.metrics_title">Monitoramento e Alertas de Recursos</h3>
             <p class="text-gray-300 mb-4 text-xl leading-tight font-light text-justify" data-i18n="features_showcase.metrics_description">
               Monitore em tempo real memória e CPU de nodes e pods. Identifique gargalos, otimize recursos e crie alertas personalizados para antecipar problemas e garantir a performance ideal da sua infraestrutura Kubernetes.
             </p>
@@ -401,10 +431,10 @@
   
         <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center md:grid-flow-row-dense">
           <div class="md:col-span-1 md:order-2">
-            <img src="img/prints/print_logs_gita.webp" alt="" class="rounded-lg shadow-lg w-full h-auto" />
+            <img src="img/prints/print_logs_gita.webp" alt="" class="rounded-lg shadow-lg w-full h-auto mb-4 md:mb-0" />
           </div>
           <div class="md:col-span-1 md:order-1 flex flex-col gap-4">
-            <h3 class="text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.logs_shell_title">Logs de Pod e Shell de Contêiner/Cluster</h3>
+            <h3 class="text-2xl md:text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.logs_shell_title">Logs de Pod e Shell de Contêiner/Cluster</h3>
             <p class="text-gray-300 mb-4 text-xl leading-tight font-light text-justify" data-i18n="features_showcase.logs_shell_description">
               Acesse logs de pod e execute comandos shell em contêineres e no cluster diretamente na interface do Gita. Gerencie e solucione problemas de forma rápida e eficiente com essas ferramentas poderosas.
             </p>
@@ -421,10 +451,10 @@
   
         <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center">
           <div class="md:col-span-1">
-            <img src="img/prints/print_ack_gita.webp" alt="" class="rounded-lg shadow-lg w-full h-auto" />
+            <img src="img/prints/print_ack_gita.webp" alt="" class="rounded-lg shadow-lg w-full h-auto mb-4 md:mb-0" />
           </div>
           <div class="md:col-span-1 flex flex-col gap-4">
-            <h3 class="text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.ack_title">ACK</h3>
+            <h3 class="text-2xl md:text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.ack_title">ACK</h3>
             <p class="text-gray-300 mb-4 text-xl leading-tight font-light text-justify" data-i18n="features_showcase.ack_description">
               Agilize a resposta a incidentes com o sistema de ACK. Permita que sua equipe reconheça alertas, evitando notificações duplicadas e otimizando a comunicação para uma resolução mais rápida.
             </p>
@@ -597,36 +627,41 @@
     </div>
   </section>
 
-  <section id="contact" class="p-12" style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
+  <section id="contact" class="p-4 md:p-12" style="background: url('img/hero-bg.jpg') no-repeat; background-size: cover;">
     <div class="bg-gradient-to-r from-yellow-400 to-orange-500 py-12 rounded-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex flex-col justify-around items-center gap-8">
-                <div class="text-center text-black">
+                <div class="text-center text-black flex items-center justify-center flex-col">
                     <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4" data-i18n="contact.title">
                         Quer falar conosco?
                     </h2>
                     <p class="mt-3 text-lg font-medium" data-i18n="contact.description">
                         Envie-nos uma mensagem e entraremos em contato o mais breve possível.
                     </p>
+
+                    <div id="form-status" class="hidden rounded bg-green-800 border-green-600 text-green-100 font-inter text-lg p-4 w-fit mt-6"></div>
                 </div>
 
-                <div class="md:w-1/2">
-                    <form id="contact-form" class="flex flex-col gap-4 text-black" data-form-type="formoid" data-form-name="contactForm">
-                        <div>
-                            <label for="nome" class="block text-sm font-bold mb-2" data-i18n="contact.name_label">Seu Nome</label>
-                            <input type="text" id="nome" name="nome" data-form-field="name" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-bold mb-2" data-i18n="contact.email_label">Email</label>
-                            <input type="email" id="email" name="email" data-form-field="email" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" data-form-email="true">
-                        </div>
-                        <div>
-                            <label for="mensagem" class="block text-sm font-bold mb-2" data-i18n="contact.message_label">Sua Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" rows="5" data-form-field="message" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"></textarea>
-                        </div>
-                        <button type="submit" class="gita-button gita-button-lg gita-button__black w-full text-center items-center justify-center" data-i18n="contact.send_button">Enviar Mensagem</button>
-                        <p id="form-status" class="text-sm mt-2" data-form-alert="true"></p>
+                <div class="w-full md:w-1/2">
+                    <form id="contact-form" class="flex flex-col gap-4 text-black" action="https://gitacloudteam.github.io/lp/contato@jackexperts.com.br" method="POST">
+                      <input type="hidden" name="_captcha" value="false">
+                      <input type="hidden" name="_next" value="https://gitacloudteam.github.io/lp/?message=Contato%20enviado!%20Obrigado%20e%20retornaremos%20o%20mais%20breve%20possível.#contact">
+
+                      <div>
+                          <label for="nome" class="block text-sm font-bold mb-2" data-i18n="contact.name_label">Seu Nome</label>
+                          <input type="text" id="nome" name="nome" data-form-field="name" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
+                      </div>
+                      <div>
+                          <label for="email" class="block text-sm font-bold mb-2" data-i18n="contact.email_label">Email</label>
+                          <input type="email" id="email" name="email" data-form-field="email" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" data-form-email="true">
+                      </div>
+                      <div>
+                          <label for="mensagem" class="block text-sm font-bold mb-2" data-i18n="contact.message_label">Sua Mensagem</label>
+                          <textarea id="mensagem" name="mensagem" rows="5" data-form-field="message" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"></textarea>
+                      </div>
+                      <button type="submit" class="gita-button gita-button-lg gita-button__black w-full text-center items-center justify-center w-full md:w-auto" data-i18n="contact.send_button">Enviar Mensagem</button>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -658,7 +693,7 @@
       <div class="flex flex-col gap-2 items-start">
         <h3 class="text-lg font-semibold mb-4" data-i18n="footer.resources">Recursos</h3>
         <ul class="list-none space-y-2 text-left">
-          <li><a href="https://doc.gita.cloud/" class="text-gray-300 hover:text-white" data-i18n="footer.documentation">Documentação</a></li>
+          <li><a href="https://doc.gita.cloud/" target="_blank" class="text-gray-300 hover:text-white" data-i18n="footer.documentation">Documentação</a></li>
           <li><a href="#contact" class="text-gray-300 hover:text-white" data-i18n="footer.contact">Contato</a></li>
           <li><a href="#pricing" class="text-gray-300 hover:text-white" data-i18n="footer.pricing">Preço</a></li>
         </ul>
@@ -694,13 +729,14 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/languageSelector.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/formoid.js"></script>
+  <script src="js/form.js"></script>
   <script src="js/lucidIcons.js"></script>
   <script src="js/toggleFaq.js"></script>
   <script src="js/titleRotator.js"></script>
   <script src="js/cardsToggleFunctionality.js"></script>
   <script src="js/openLink.js"></script>
+  <script src="js/burgerMenu.js"></script>
+  <script src="js/tiltImg.js"></script>
 
 </body>
 </html>
