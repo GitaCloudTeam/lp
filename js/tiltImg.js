@@ -5,4 +5,3 @@ VanillaTilt.init(document.querySelector(".tilt-img"), {
     "max-glare": 0.2, // intensidade do brilho
     // scale: 1.05       // zoom no hover
 });
-debugger;
