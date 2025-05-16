@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title data-i18n="site.title">Gita – Incidentes, problemas e eventos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=InterTight:wght@300;400;500;600;700;800&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=Sora:wght@300..800&family=InterTight:wght@300..800&display=swap">
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="img/icon-gita.svg">
@@ -17,7 +15,7 @@
 
   <script type="text/javascript" src="js/cardsToggleFunctionality.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="js/i18n.js"></script>
+  <script src="js/i18n.js" defer></script>
   <script src="js/smoothScroll.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
 
@@ -43,7 +41,7 @@
         <!-- Logo -->
         <div class="flex flex-1">
           <a href="https://gita.cloud/" class="text-2xl font-bold text-indigo-600">
-            <img src="img/logo-gita-white.svg" width="120" class="min-w-[80px]" />
+            <img src="img/logo-gita-white.svg" width="120" />
           </a>
         </div>
 
@@ -152,7 +150,10 @@
 
       <!-- Lado direito: imagem -->
       <div class="flex flex-col flex-1 items-center justify-center mt-4 lg:mt-0">
-        <img src="img/dalle.webp" alt="Mascote Girafa da Gita" class="tilt-img max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]" />
+        <img src="img/dalle.webp"
+          alt="Mascote Girafa da Gita"
+          width="640" height="640"
+          class="tilt-img" />
       </div>
       
     </header>
@@ -290,6 +291,9 @@
                         src="img/prints/accordion/image008.webp"
                         class="rounded-md"
                         style="color: transparent;"
+                        loading="lazy"
+                        width="825"
+                        height="482"
                     >
                     <div class="absolute w-full h-full top-0 bg-gradient-to-l from-zinc-950 max-lg:!bg-gradient-to-b"></div>
                 </div>
@@ -330,7 +334,7 @@
     <div class="max-w-7xl mx-auto px-4 py-[60px]">
       <div class="flex flex-col md:flex-row items-center justify-center items-center gap-10">
         <div class="lg:w-1/2 mb-8 lg:mb-0">
-          <img src="img/prints/print_dashboard_gita.png" alt="Quais problemas o GITA ajuda você a resolver?" class="border-b border-gray-700" />
+          <img src="img/prints/print_dashboard_gita.webp" width="810" height="532" loading="lazy" alt="Quais problemas o GITA ajuda você a resolver?" class="border-b border-gray-700" />
         </div>
         <div class="lg:w-1/2">
           <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4 text-gray-100 text-center md:text-left" data-i18n="problems.title">
@@ -396,7 +400,11 @@
       <div class="space-y-24 mt-24">
         <div class="md:grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8 md:items-center">
           <div class="md:col-span-1">
-            <img src="img/prints/print_eventos_gita.webp" alt="O Gita captura e monitora eventos críticos do Kubernetes, fornecendo informações valiosas sobre o estado do seu cluster. Identifique, compreenda e resolva vulnerabilidades e inconformidades de forma eficaz." class="rounded-lg shadow-lg w-full h-auto mb-4 md:mb-0" />
+            <img src="img/prints/print_eventos_gita.webp" loading="lazy"
+              alt="O Gita captura e monitora eventos críticos do Kubernetes, fornecendo informações valiosas sobre o estado do seu cluster. Identifique, compreenda e resolva vulnerabilidades e inconformidades de forma eficaz."
+              class="rounded-lg shadow-lg mb-4 md:mb-0"
+              width="832" height="464"
+              />
           </div>
           <div class="flex flex-col gap-4">
             <h3 class="text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.events_title">Eventos</h3>
@@ -414,7 +422,11 @@
   
         <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center md:grid-flow-row-dense">
           <div class="md:col-span-1 md:order-2">
-            <img src="img/prints/print_rastreio_gita.webp" alt="Localize precisamente a origem dos problemas em seu ambiente Kubernetes com nossa visualização em formato de grafo. Identifique rapidamente a raiz dos erros através de uma visão completa dos seus recursos e suas relações." class="rounded-lg shadow-lg w-full h-auto mb-4 md:mb-0" />
+            <img src="img/prints/print_rastreio_gita.webp" loading="lazy"
+              alt="Localize precisamente a origem dos problemas em seu ambiente Kubernetes com nossa visualização em formato de grafo. Identifique rapidamente a raiz dos erros através de uma visão completa dos seus recursos e suas relações."
+              class="rounded-lg shadow-lg mb-4 md:mb-0"
+              width="832" height="464"
+            />
           </div>
           <div class="md:col-span-1 md:order-1 flex flex-col gap-4">
             <h3 class="text-2xl md:text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.graph_title">Descubra onde o problema aconteceu</h3>
@@ -432,7 +444,11 @@
   
         <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center">
           <div class="md:col-span-1">
-            <img src="img/prints/print_monitoramento_gita.png" alt="Monitore em tempo real memória e CPU de nodes e pods. Identifique gargalos, otimize recursos e crie alertas personalizados para antecipar problemas e garantir a performance ideal da sua infraestrutura Kubernetes." class="rounded-lg shadow-lg w-full h-auto mb-4 md:mb-0" />
+            <img src="img/prints/print_monitoramento_gita.png" loading="lazy"
+              alt="Monitore em tempo real memória e CPU de nodes e pods. Identifique gargalos, otimize recursos e crie alertas personalizados para antecipar problemas e garantir a performance ideal da sua infraestrutura Kubernetes."
+              class="rounded-lg shadow-lg mb-4 md:mb-0"
+              width="832" height="464"
+            />
           </div>
           <div class="md:col-span-1 flex flex-col gap-4">
             <h3 class="text-2xl md:text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.metrics_title">Monitoramento e Alertas de Recursos</h3>
@@ -452,7 +468,11 @@
   
         <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center md:grid-flow-row-dense">
           <div class="md:col-span-1 md:order-2">
-            <img src="img/prints/print_logs_gita.webp" alt="Acesse logs de pod e execute comandos shell em contêineres e no cluster diretamente na interface do Gita. Gerencie e solucione problemas de forma rápida e eficiente com essas ferramentas poderosas." class="rounded-lg shadow-lg w-full h-auto mb-4 md:mb-0" />
+            <img src="img/prints/print_logs_gita.webp" loading="lazy"
+              alt="Acesse logs de pod e execute comandos shell em contêineres e no cluster diretamente na interface do Gita. Gerencie e solucione problemas de forma rápida e eficiente com essas ferramentas poderosas."
+              class="rounded-lg shadow-lg mb-4 md:mb-0"
+              width="832" height="464"
+            />
           </div>
           <div class="md:col-span-1 md:order-1 flex flex-col gap-4">
             <h3 class="text-2xl md:text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.logs_shell_title">Logs de Pod e Shell de Contêiner/Cluster</h3>
@@ -472,7 +492,11 @@
   
         <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center">
           <div class="md:col-span-1">
-            <img src="img/prints/print_ack_gita.webp" alt="Agilize a resposta a incidentes com o sistema de ACK. Permita que sua equipe reconheça alertas, evitando notificações duplicadas e otimizando a comunicação para uma resolução mais rápida." class="rounded-lg shadow-lg w-full h-auto mb-4 md:mb-0" />
+            <img src="img/prints/print_ack_gita.webp" loading="lazy"
+              alt="Agilize a resposta a incidentes com o sistema de ACK. Permita que sua equipe reconheça alertas, evitando notificações duplicadas e otimizando a comunicação para uma resolução mais rápida."
+              class="rounded-lg shadow-lg mb-4 md:mb-0"
+              width="832" height="464"
+            />
           </div>
           <div class="md:col-span-1 flex flex-col gap-4">
             <h3 class="text-2xl md:text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.ack_title">ACK</h3>
@@ -693,12 +717,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
       <div class="flex flex-col gap-2 items-start">
-        <img src="img/logo-gita-white.svg" alt="Logotipo Gita jackexperts" width="120"/>
+        <img src="img/logo-gita-white.svg" alt="Logotipo Gita jackexperts" width="120" loading="lazy"/>
         <small class="text-left mb-6" data-i18n="footer.description">Acompanhe seus servidores e clusters Kubernetes a faça gestão de incidentes e boas práticas.</small>
         
         <div class="flex flex-col rounded-md bg-gray-700 px-4 py-3 gap-1">
           <small class="text-gray-100">Powered by Jack Experts</small>
-          <a href="https://jackexperts.com" target="_blank"><img src="img/logo-jackexperts.png" alt="Logotipo Jackexperts" width="100"/></a>
+          <a href="https://jackexperts.com" target="_blank"><img src="img/logo-jackexperts.png" loading="lazy" alt="Logotipo Jackexperts" width="100"/></a>
         </div>
       </div>
 
@@ -748,7 +772,6 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/languageSelector.js"></script>
   <script src="js/form.js"></script>
   <script src="js/lucidIcons.js"></script>
