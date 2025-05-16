@@ -15,10 +15,24 @@
   <meta name="description" content="Gita - Encontre soluções para incidentes, problemas e eventos Kubernetes. Aprenda como gerenciar Kubernetes de maneira eficaz com a Gita.">
   <meta name="keywords" content="Gita, Kubernetes, gerenciamento, monitoramento, observabilidade, incidentes, problemas, segurança, eventos">
 
-  <script src="js/cardsToggleFunctionality.js"></script>
+  <script type="text/javascript" src="js/cardsToggleFunctionality.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/smoothScroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
 
   <!-- Ícones -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Open Graph e Twitter Cards -->
+  <meta property="og:title" content="Gita – Incidentes, problemas e eventos" />
+  <meta property="og:description" content="Encontre soluções para incidentes, problemas e eventos Kubernetes. Aprenda como gerenciar Kubernetes de maneira eficaz com a Gita." />
+  <meta property="og:image" content="https://gitacloudteam.github.io/lp/img/thumb-cover.jpg" />
+  <meta property="og:url" content="https://gitacloudteam.github.io/lp/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://gitacloudteam.github.io/lp/img/logo-gita.svg" type="image/x-icon">
 </head>
 <body class="bg-[#0b0f19] text-gray-800 relative flex flex-col">
 
@@ -35,8 +49,19 @@
 
         <!-- Botão Hambúrguer -->
         <div class="md:hidden flex flex-row gap-2 flex-grow justify-end">
-          <a href="https://app.gita.cloud/" target="_blank" onclick="toggleMenu()" class="gita-button gita-button-sm gita-button__secondary" data-i18n="menu.login">Login</a>
-          <a href="https://app.gita.cloud/register" target="_blank" onclick="toggleMenu()" class="gita-button gita-button-sm gita-button__primary" data-i18n="menu.signup">Começar Agora</a>
+          <div class="relative inline-block text-left">
+            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center px-2 py-1 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
+              <i data-lucide="globe" class="h-4 w-4"></i>
+              <span id="langButtonSpan" class="uppercase">PT</span>
+              <i data-lucide="chevron-down" class="h-4 w-4"></i>
+            </button>
+            <div id="langMenu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
+              <div class="py-1">
+                <button onclick="setLanguage('pt')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
+                <button onclick="setLanguage('en')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>
+              </div>
+            </div>
+          </div>
 
           <button id="menu-toggle" class="text-white hover:text-gray-300 focus:outline-none">
             <i data-lucide="menu" class="w-6 h-6"></i>
