@@ -688,26 +688,22 @@
                 </div>
 
                 <div class="w-full md:w-1/2">
-                    <form id="contact-form" class="flex flex-col gap-4 text-black" action="https://gita.cloud/contato@jackexperts.com.br" method="POST">
-                      <input type="hidden" name="_captcha" value="false">
-                      <input type="hidden" name="_next" value="https://gita.cloud/?message=Contato%20enviado!%20Obrigado%20e%20retornaremos%20o%20mais%20breve%20possível.#contact">
-
+                    <form id="contact-form" class="flex flex-col gap-4 text-black">
                       <div>
-                          <label for="nome" class="block text-sm font-bold mb-2" data-i18n="contact.name_label">Seu Nome</label>
-                          <input type="text" id="nome" name="nome" data-form-field="name" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
+                        <label for="nome" class="block text-sm font-bold mb-2">Seu Nome</label>
+                        <input type="text" id="nome" name="nome" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
                       </div>
                       <div>
-                          <label for="email" class="block text-sm font-bold mb-2" data-i18n="contact.email_label">Email</label>
-                          <input type="email" id="email" name="email" data-form-field="email" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" data-form-email="true">
+                        <label for="email" class="block text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
                       </div>
                       <div>
-                          <label for="mensagem" class="block text-sm font-bold mb-2" data-i18n="contact.message_label">Sua Mensagem</label>
-                          <textarea id="mensagem" name="mensagem" rows="5" data-form-field="message" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"></textarea>
+                        <label for="mensagem" class="block text-sm font-bold mb-2">Sua Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"></textarea>
                       </div>
-                      <button type="submit" class="gita-button gita-button-lg gita-button__black w-full text-center items-center justify-center w-full md:w-auto" data-i18n="contact.send_button">Enviar Mensagem</button>
+                      <button type="submit" class="gita-button gita-button-lg gita-button__black w-full">Enviar Mensagem</button>
                     </form>
-
-                </div>
+                  </div>                  
             </div>
         </div>
     </div>
@@ -772,6 +768,40 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("mensagem").value;
+    
+      fetch("https://formoid.net/api/push", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: "7D23IQ+NlYc8CLWW65abZMC+fPqeIbk5l5Jc9OJey5/Cn5AG3jbVz7Q7iEFb2p+6TyzBHNxrE5cEfsILRbO6WY8tHq5/NO8QK+Y37WP7yeVGW1LT3Tr3MXLI7SB6y3aC",
+          form: {
+            title: "Mobirise Form",
+            data: [
+              ["Name", name],
+              ["Email", email],
+              ["Message", message]
+            ]
+          }
+        })
+      })
+      .then(() => {
+        alert("Mensagem enviada com sucesso!");
+        // Ou redirecionar: window.location.href = "https://gita.cloud/?message=Contato%20enviado!..."
+      })
+      .catch(() => {
+        alert("Erro ao enviar mensagem.");
+      });
+    });
+  </script>
   <script src="js/languageSelector.js"></script>
   <script src="js/form.js"></script>
   <script src="js/lucidIcons.js"></script>
