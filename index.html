@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title data-i18n="site.title">Gita – Incidentes, problemas e eventos</title>
+  <meta name="generator" content="Mobirise v5.9.6, mobirise.com">
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=Sora:wght@300..800&family=InterTight:wght@300..800&display=swap">
   <link rel="stylesheet" href="styles.css" />
@@ -687,23 +689,36 @@
                     <div id="form-status" class="hidden rounded bg-green-800 border-green-600 text-green-100 font-inter text-lg p-4 w-fit mt-6"></div>
                 </div>
 
-                <div class="w-full md:w-1/2">
-                    <form id="contact-form" class="flex flex-col gap-4 text-black">
-                      <div>
-                        <label for="nome" class="block text-sm font-bold mb-2">Seu Nome</label>
-                        <input type="text" id="nome" name="nome" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
+                <div class="w-full md:w-1/2" data-form-type="formoid">
+                  <form action="https://mobirise.eu/" method="POST" class="php-email-form" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="18ncmzc/9Foh5mlYaD5tHsoAKJorif/5cy+Qdo+p2Bq05wZgsbuM7Y4ZxmDBjpe/oWJa5TLY+C+3V/ab+7Ke9YIBayoTWehPUphY3TlMnrsWF+9uvVtFnhfCpcM1zeJO">
+                    <div class="row">
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Formulario enviado. Obrigado!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! Ocorreu um problema!
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                      <div data-for="name">
+                        <label for="nome" class="block text-sm font-bold mb-2 mt-2">Seu Nome</label>
+                        <input type="text" name="name" placeholder="Nome" data-form-field="name" class="form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" value="" id="name-form02-0">
                       </div>
-                      <div>
-                        <label for="email" class="block text-sm font-bold mb-2">Email</label>
-                        <input type="email" id="email" name="email" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
+                      <div data-for="email">
+                        <label for="nome" class="block text-sm font-bold mb-2 mt-2">Email</label>
+                        <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" value="" id="email-form02-0">
                       </div>
-                      <div>
-                        <label for="mensagem" class="block text-sm font-bold mb-2">Sua Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"></textarea>
+                      <!-- <div class="col-12 form-group mb-3" data-for="phone">
+                        <input type="tel" name="phone" placeholder="Telefone" data-form-field="phone" class="form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" value="" id="phone-form02-0">
+                      </div> -->
+                      <div data-for="textarea">
+                        <label for="nome" class="block text-sm font-bold mb-2 mt-2">Mensagem</label>
+                        <textarea name="textarea" placeholder="Mensagem" rows="5" data-form-field="textarea" class="form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" id="textarea-form02-0"></textarea>
                       </div>
-                      <button type="submit" class="gita-button gita-button-lg gita-button__black w-full">Enviar Mensagem</button>
-                    </form>
-                  </div>                  
+                      <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                        <button type="submit" class="gita-button gita-button-lg gita-button__black w-full">Enviar Mensagem</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>                 
             </div>
         </div>
     </div>
@@ -768,40 +783,6 @@
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById("nome").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("mensagem").value;
-    
-      fetch("https://formoid.net/api/push", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          email: "7D23IQ+NlYc8CLWW65abZMC+fPqeIbk5l5Jc9OJey5/Cn5AG3jbVz7Q7iEFb2p+6TyzBHNxrE5cEfsILRbO6WY8tHq5/NO8QK+Y37WP7yeVGW1LT3Tr3MXLI7SB6y3aC",
-          form: {
-            title: "Mobirise Form",
-            data: [
-              ["Name", name],
-              ["Email", email],
-              ["Message", message]
-            ]
-          }
-        })
-      })
-      .then(() => {
-        alert("Mensagem enviada com sucesso!");
-        // Ou redirecionar: window.location.href = "https://gita.cloud/?message=Contato%20enviado!..."
-      })
-      .catch(() => {
-        alert("Erro ao enviar mensagem.");
-      });
-    });
-  </script>
   <script src="js/languageSelector.js"></script>
   <script src="js/form.js"></script>
   <script src="js/lucidIcons.js"></script>
@@ -811,6 +792,12 @@
   <script src="js/openLink.js"></script>
   <script src="js/burgerMenu.js"></script>
   <script src="js/tiltImg.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  
+  <script src="assets/formoid/formoid.min.js"></script>  
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+  <script src="assets/js/main.js"></script> 
+
 
 </body>
 </html>
