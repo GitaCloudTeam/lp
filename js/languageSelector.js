@@ -1,12 +1,17 @@
-const langButton = document.getElementById("langButton");
-const langMenu = document.getElementById("langMenu");
+document.addEventListener("DOMContentLoaded", () => {
+  // Alterna o menu de idioma ao clicar no botão correspondente
+  document.querySelectorAll('.lang-button').forEach((btn) => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const menu = this.parentElement.querySelector('.lang-menu');
+      if (menu) menu.classList.toggle('hidden');
+    });
+  });
 
-langButton.addEventListener("click", () => {
-    langMenu.classList.toggle("hidden");
-});
-
-document.addEventListener("click", (e) => {
-    if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
-        langMenu.classList.add("hidden");
-    }
+  // Fecha todos os menus de idioma visíveis ao clicar fora
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.lang-menu:not(.hidden)').forEach((menu) => {
+      menu.classList.add('hidden');
+    });
+  });
 });

@@ -20,6 +20,11 @@
   <script src="js/i18n.js" defer></script>
   <script src="js/smoothScroll.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- Ícones -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -50,15 +55,15 @@
         <!-- Botão Hambúrguer -->
         <div class="md:hidden flex flex-row gap-2 flex-grow justify-end">
           <div class="relative inline-block text-left">
-            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center px-2 py-1 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
+            <button type="button" class="lang-button flex flex-row gap-2 items-center justify-center px-2 py-1 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
               <i data-lucide="globe" class="h-4 w-4"></i>
-              <span id="langButtonSpan" class="uppercase">PT</span>
+              <span class="lang-button-span uppercase">PT</span>
               <i data-lucide="chevron-down" class="h-4 w-4"></i>
             </button>
-            <div id="langMenu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
+            <div class="lang-menu origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
               <div class="py-1">
-                <button onclick="setLanguage('pt')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
-                <button onclick="setLanguage('en')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>
+                <button onclick="setLanguage('pt', true)" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
+                <button onclick="setLanguage('en', true)" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>
               </div>
             </div>
           </div>
@@ -81,15 +86,15 @@
         <div class="hidden md:flex flex-1 items-center justify-end space-x-4">
           <!-- Idioma -->
           <div class="relative inline-block text-left">
-            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center px-2 py-1 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
+            <button type="button" class="lang-button flex flex-row gap-2 items-center justify-center px-2 py-1 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
               <i data-lucide="globe" class="h-4 w-4"></i>
-              <span id="langButtonSpan" class="uppercase">PT</span>
+              <span class="lang-button-span uppercase">PT</span>
               <i data-lucide="chevron-down" class="h-4 w-4"></i>
             </button>
-            <div id="langMenu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
+            <div class="lang-menu origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
               <div class="py-1">
-                <button onclick="setLanguage('pt')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
-                <button onclick="setLanguage('en')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>
+                <button onclick="setLanguage('pt', true)" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
+                <button onclick="setLanguage('en', true)" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>
               </div>
             </div>
           </div>

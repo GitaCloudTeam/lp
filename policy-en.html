@@ -15,7 +15,6 @@
   <meta name="description" content="Gita - Encontre soluções para incidentes, problemas e eventos Kubernetes. Aprenda como gerenciar Kubernetes de maneira eficaz com a Gita.">
   <meta name="keywords" content="Gita, Kubernetes, gerenciamento, monitoramento, observabilidade, incidentes, problemas, segurança, eventos">
 
-  <script type="text/javascript" src="js/cardsToggleFunctionality.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/i18n.js" defer></script>
   <script src="js/smoothScroll.js"></script>
@@ -50,12 +49,12 @@
         <!-- Botão Hambúrguer -->
         <div class="md:hidden flex flex-row gap-2 flex-grow justify-end">
           <div class="relative inline-block text-left">
-            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center px-2 py-1 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
+            <button type="button" class="lang-button flex flex-row gap-2 items-center justify-center px-2 py-1 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
               <i data-lucide="globe" class="h-4 w-4"></i>
-              <span id="langButtonSpan" class="uppercase">PT</span>
+              <span class="lang-button-span uppercase">PT</span>
               <i data-lucide="chevron-down" class="h-4 w-4"></i>
             </button>
-            <div id="langMenu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
+            <div class="lang-menu origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
               <div class="py-1">
                 <button onclick="setLanguage('pt')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
                 <button onclick="setLanguage('en')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>
@@ -81,12 +80,12 @@
         <div class="hidden md:flex flex-1 items-center justify-end space-x-4">
           <!-- Idioma -->
           <div class="relative inline-block text-left">
-            <button id="langButton" type="button" class="flex flex-row gap-2 items-center justify-center px-2 py-1 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
+            <button type="button" class="lang-button flex flex-row gap-2 items-center justify-center px-2 py-1 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none">
               <i data-lucide="globe" class="h-4 w-4"></i>
-              <span id="langButtonSpan" class="uppercase">PT</span>
+              <span class="lang-button-span uppercase">PT</span>
               <i data-lucide="chevron-down" class="h-4 w-4"></i>
             </button>
-            <div id="langMenu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
+            <div class="lang-menu origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
               <div class="py-1">
                 <button onclick="setLanguage('pt')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">PT</button>
                 <button onclick="setLanguage('en')" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 w-full text-left">EN</button>

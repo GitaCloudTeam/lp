@@ -1,6 +1,8 @@
-async function setLanguage(lang) {
-    const langMenu = document.getElementById("langMenu");
-    langMenu.classList.add("hidden");
+async function setLanguage(lang, isHomePage = false) {
+    // Fecha todos os menus de idioma visíveis
+    document.querySelectorAll('.lang-menu:not(.hidden)').forEach(menu => {
+      menu.classList.add("hidden");
+    });
 
     try {
       const response = await fetch(`./lang/${lang}.json`);
@@ -19,7 +21,7 @@ async function setLanguage(lang) {
       }
 
       // Atualiza o array de textos para o rotating text
-      if (translations["hero.rotating_texts"]) {
+      if (isHomePage && translations["hero.rotating_texts"]) {
         texts = translations["hero.rotating_texts"];
         // Reinicia o typewriter para o novo idioma
         textIndex = 0;
@@ -32,9 +34,10 @@ async function setLanguage(lang) {
       // Salva a escolha no localStorage
       localStorage.setItem("lang", lang);
 
-      // Seta idioma selecionado no botão
-      const langButtonTextSpan = document.getElementById('langButtonSpan');
-      langButtonTextSpan.textContent = lang;
+      // Seta idioma selecionado em todos os botões de idioma
+      document.querySelectorAll('.lang-button-span').forEach(span => {
+        span.textContent = lang;
+      });
     } catch (error) {
       console.error("Erro ao carregar idioma:", error);
     }
