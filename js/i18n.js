@@ -47,5 +47,5 @@ async function setLanguage(lang, isHomePage = false) {
   const savedLang = localStorage.getItem("lang") || "pt";
 
 document.addEventListener("DOMContentLoaded", async function () {
-  setLanguage(savedLang);
+  setLanguage(savedLang, true);
 });
