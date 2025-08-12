@@ -39,33 +39,14 @@ async function setLanguage(lang, isHomePage = false) {
         span.textContent = lang;
       });
 
-      const currentPath = window.location.pathname;
-      let newPath;
-
-      if (lang === 'en') {
-          // Adiciona /en se não tiver
-          if (!currentPath.endsWith('/en')) {
-              // Remove uma barra final evita /en/
-              const basePath = currentPath.endsWith('/') ? currentPath.slice(0, -1) : currentPath;
-              newPath = basePath + '/en';
-          }
+      // Atualiza a URL com o parâmetro correto
+      const url = new URL(window.location.href);
+      if (lang === "en") {
+        url.search = "?en";
       } else {
-          // Para 'pt' ou qualquer outro idioma futuramente
-          // Remove /en se tiver
-          if (currentPath.endsWith('/en')) {
-              newPath = currentPath.slice(0, -3);
-              // Remove os últimos 3 caracteres ('/en')
-              // Se o resultado for uma string vazia, significa que estava na raiz.
-              if (newPath === '') {
-                  newPath = '/';
-              }
-          }
+        url.search = "";
       }
-      
-      // Altera a URL no navegador apenas se houver mudança
-      if (newPath && newPath !== currentPath) {
-          history.replaceState(null, '', newPath);
-      }
+      history.replaceState(null, "", url.toString());
     } catch (error) {
       console.error("Erro ao carregar idioma:", error);
     }
@@ -75,17 +56,17 @@ async function setLanguage(lang, isHomePage = false) {
   const savedLang = localStorage.getItem("lang") || "pt";
 
 document.addEventListener("DOMContentLoaded", async function () {
+  const params = new URLSearchParams(window.location.search);
   let initialLang = "pt";
 
-  if (window.location.pathname.endsWith('/en')) {
-      initialLang = 'en';
+  if (params.get("lang") === "en" || params.has("en")) {
+    initialLang = "en";
   } else {
-      // Se a URL não tiver idioma, usa o que está no localStorage
-      const savedLang = localStorage.getItem("lang");
-      if (savedLang) {
-          initialLang = savedLang;
-      }
+    const savedLang = localStorage.getItem("lang");
+    if (savedLang) {
+      initialLang = savedLang;
+    }
   }
 
-  setLanguage(savedLang, true);
+  setLanguage(initialLang, true);
 });
