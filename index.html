@@ -66,6 +66,17 @@
   
   <!-- Favicon -->
   <link rel="icon" href="https://gita.cloud/img/logo-gita.svg" type="image/x-icon">
+    
+  <!-- Google recaptcha -->
+  <script type"text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init({
+          publicKey: "8bHMpyRNPDFkMQlvv", // Emailjs API Key
+        });
+    })();
+  </script>
 </head>
 <body class="bg-[#0b0f19] text-gray-800 relative">
 
@@ -722,8 +733,9 @@
                     <div id="form-status" class="hidden rounded bg-green-800 border-green-600 text-green-100 font-inter text-lg p-4 w-fit mt-6"></div>
                 </div>
 
-                <div class="w-full md:w-1/2" data-form-type="formoid">
-                  <form action="https://mobirise.eu/" method="POST" class="php-email-form" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="7D23IQ+NlYc8CLWW65abZMC+fPqeIbk5l5Jc9OJey5/Cn5AG3jbVz7Q7iEFb2p+6TyzBHNxrE5cEfsILRbO6WY8tHq5/NO8QK+Y37WP7yeVGW1LT3Tr3MXLI7SB6y3aC">
+                <!-- <div class="w-full md:w-1/2" data-form-type="formoid"> -->
+                <div class="w-full md:w-1/2">
+                  <!-- <form action="https://mobirise.eu/" method="POST" class="php-email-form" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="7D23IQ+NlYc8CLWW65abZMC+fPqeIbk5l5Jc9OJey5/Cn5AG3jbVz7Q7iEFb2p+6TyzBHNxrE5cEfsILRbO6WY8tHq5/NO8QK+Y37WP7yeVGW1LT3Tr3MXLI7SB6y3aC">
                     <div class="row">
                         <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Formulario enviado. Obrigado!</div>
                         <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
@@ -739,9 +751,9 @@
                         <label for="nome" class="block text-sm font-bold mb-2 mt-2">Email</label>
                         <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" value="" id="email-form02-0">
                       </div>
-                      <!-- <div class="col-12 form-group mb-3" data-for="phone">
+                      <div class="col-12 form-group mb-3" data-for="phone">
                         <input type="tel" name="phone" placeholder="Telefone" data-form-field="phone" class="form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" value="" id="phone-form02-0">
-                      </div> -->
+                      </div>
                       <div data-for="textarea">
                         <label for="nome" class="block text-sm font-bold mb-2 mt-2">Mensagem</label>
                         <textarea name="textarea" placeholder="Mensagem" rows="5" data-form-field="textarea" class="form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" id="textarea-form02-0"></textarea>
@@ -750,6 +762,35 @@
                         <button type="submit" class="gita-button gita-button-lg gita-button__black w-full">Enviar Mensagem</button>
                       </div>
                     </div>
+                  </form> -->
+
+                  <form id="contact-form" class="php-email-form">
+                      <div class="dragArea row">
+                          
+                          <div data-for="name">
+                              <label for="name" class="block text-sm font-bold mb-2 mt-2">Seu Nome</label>
+                              <input type="text" name="name" placeholder="Nome" class="gita-form-input form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" id="name-form02-0" required>
+                          </div>
+                          
+                          <div data-for="email">
+                              <label for="email" class="block text-sm font-bold mb-2 mt-2">Email</label>
+                              <input type="email" name="email" placeholder="E-mail" class="gita-form-input form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" id="email-form02-0" required>
+                          </div>
+                          
+                          <div data-for="textarea">
+                              <label for="textarea" class="block text-sm font-bold mb-2 mt-2">Mensagem</label>
+                              <textarea name="textarea" placeholder="Mensagem" rows="5" class="gita-form-input form-control shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" id="textarea-form02-0" required></textarea>
+                          </div>
+                          
+                          <div class="col-12 form-group my-4">
+                              <div class="g-recaptcha" 
+                                  data-sitekey="6LcUJfMrAAAAABahJs8v1EVnd8U2Rs6XI883_Q3q"> </div>
+                          </div>
+
+                          <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                              <button type="submit" class="gita-form-input gita-button gita-button-lg gita-button__black w-full">Enviar Mensagem</button>
+                          </div>
+                      </div>
                   </form>
                 </div>                 
             </div>
@@ -826,7 +867,7 @@
   <script src="js/burgerMenu.js"></script>
   <script src="js/tiltImg.js"></script>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  
-  <script src="assets/formoid/formoid.min.js"></script>  
+  <!-- <script src="assets/formoid/formoid.min.js"></script>   -->
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
   <script src="assets/js/main.js"></script> 
