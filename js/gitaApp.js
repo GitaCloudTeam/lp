@@ -155,8 +155,23 @@
             <section data-view="audit" hidden></section>
           </div>
         </div>
-        <div class="ga-toast" data-ref="toast" hidden>${icon("sparkles")}<span>Essa tela está no app. Comece o teste grátis para explorar tudo.</span></div>
       </div>`;
+
+    stage.insertAdjacentHTML("beforeend", `
+      <div class="ga-modal" data-ref="modal" hidden>
+        <div class="ga-modal__backdrop" data-close-modal></div>
+        <div class="ga-modal__box" role="dialog" aria-modal="true" aria-labelledby="ga-modal-title">
+          <button type="button" class="ga-modal__x" data-close-modal aria-label="Fechar">${icon("x")}</button>
+          <span class="ga-modal__icon"><img src="img/icon-gita.svg" alt="" width="22" height="22"></span>
+          <h3 id="ga-modal-title" data-ref="modal-title"></h3>
+          <p data-ref="modal-text"></p>
+          <div class="ga-modal__actions">
+            <a href="https://app.gita.cloud/register" target="_blank" rel="noopener" class="ga-modal__cta" data-ref="modal-cta"></a>
+            <button type="button" class="ga-modal__ghost" data-close-modal data-ref="modal-back"></button>
+          </div>
+          <small data-ref="modal-note"></small>
+        </div>
+      </div>`);
 
     const shell = stage.querySelector(".ga-shell");
     const ref = (k) => shell.querySelector(`[data-ref="${k}"]`);
@@ -207,13 +222,58 @@
       icons();
     }
 
-    let toastTimer;
-    function soon() {
-      const t = ref("toast");
-      t.hidden = false;
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => (t.hidden = true), 2600);
+    const COPY = {
+      pt: {
+        title: (f) => (f ? `${f} está no Gita completo` : "Explore o Gita completo"),
+        text: "Esta demo mostra só algumas telas. Crie sua conta e conecte seu cluster para usar todas as funcionalidades com seus próprios dados.",
+        cta: "Criar conta grátis",
+        back: "Continuar na demo",
+        note: "15 dias grátis",
+      },
+      en: {
+        title: (f) => (f ? `${f} is in the full Gita` : "Explore the full Gita"),
+        text: "This demo shows just a few screens. Create your account and connect your cluster to use every feature with your own data.",
+        cta: "Create free account",
+        back: "Back to the demo",
+        note: "15-day free trial",
+      },
+    };
+
+    const modal = stage.querySelector('[data-ref="modal"]');
+    const mref = (k) => modal.querySelector(`[data-ref="${k}"]`);
+    let lastFocus = null;
+
+    function soon(trigger) {
+      let lang = "pt";
+      try { lang = localStorage.getItem("lang") === "en" ? "en" : "pt"; } catch (e) { /* storage bloqueado */ }
+      const c = COPY[lang];
+      const label = trigger && (trigger.querySelector("span")?.textContent || trigger.getAttribute("aria-label") || "").trim();
+      mref("modal-title").textContent = c.title(label);
+      mref("modal-text").textContent = c.text;
+      mref("modal-cta").textContent = c.cta;
+      mref("modal-back").textContent = c.back;
+      mref("modal-note").textContent = c.note;
+      lastFocus = trigger;
+      modal.hidden = false;
+      icons();
+      mref("modal-cta").focus({ preventScroll: true });
+      if (typeof window.gtag === "function") window.gtag("event", "demo_menu_click", { item: label || "unknown" });
     }
+
+    function closeModal() {
+      modal.hidden = true;
+      if (lastFocus) lastFocus.focus({ preventScroll: true });
+    }
+
+    modal.addEventListener("click", (ev) => {
+      if (ev.target.closest("[data-close-modal]")) closeModal();
+    });
+    mref("modal-cta").addEventListener("click", () => {
+      if (typeof window.gtag === "function") window.gtag("event", "demo_register_click");
+    });
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape" && !modal.hidden) closeModal();
+    });
 
     const mounted = new Set();
     const builders = { dashboard: viewDashboard, timeline: viewTimeline, events: viewEvents, audit: viewAudit };
@@ -243,7 +303,7 @@
         renderMenu();
       } else if (t.dataset.ref === "collapse") {
         shell.classList.toggle("is-collapsed");
-      } else soon();
+      } else soon(t);
     });
     shell.addEventListener("pointerdown", () => (state.touched = true));
 
