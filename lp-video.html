@@ -552,6 +552,139 @@
             </div>
           </div>
         </div>
+
+        <!-- Auditoria -->
+                <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center md:grid-flow-row-dense">
+          <div class="md:col-span-1 md:order-2 mb-4 md:mb-0">
+            <!-- Reproduz a tela de Auditoria do gita-web (pages/Audit) com as cores do tema escuro -->
+            <div class="audit-mock relative rounded-lg shadow-lg border border-[#2a2823] bg-[#141311] overflow-hidden text-[#f9f9f8] text-[11px] font-[inter] select-none" role="img" aria-label="Tela de auditoria do Gita: operações do cluster com data, verbo, usuário, recurso e namespace">
+              <div class="flex items-center gap-1.5 p-3 overflow-hidden">
+                <span class="audit-mock__filter"><i data-lucide="circle-plus"></i>Namespace<span class="audit-mock__badge">payments</span></span>
+                <span class="audit-mock__filter"><i data-lucide="circle-plus"></i>Kind</span>
+                <span class="audit-mock__filter"><i data-lucide="circle-plus"></i>Verb</span>
+                <span class="audit-mock__filter hidden sm:inline-flex"><i data-lucide="circle-plus"></i>User</span>
+                <span class="audit-mock__filter !border-solid hidden sm:inline-flex"><i data-lucide="calendar"></i>05/10/2026</span>
+                <span class="audit-mock__filter !border-solid !px-2 sm:hidden"><i data-lucide="refresh-cw" class="!mr-0"></i></span>
+              </div>
+              <div class="mx-3 mb-3 rounded-lg border border-[#2a2823] bg-[#1b1a18] overflow-hidden">
+                <table class="w-full text-left">
+                  <thead>
+                    <tr class="border-b border-[#2a2823]">
+                      <th class="audit-mock__th"><span class="inline-flex items-center gap-1">Date<i data-lucide="chevrons-up-down" class="h-3 w-3 text-[#87806f]"></i></span></th>
+                      <th class="audit-mock__th">Verb</th>
+                      <th class="audit-mock__th hidden sm:table-cell">User</th>
+                      <th class="audit-mock__th hidden sm:table-cell">Kind</th>
+                      <th class="audit-mock__th">Name</th>
+                      <th class="audit-mock__th hidden sm:table-cell">Namespace</th>
+                    </tr>
+                  </thead>
+                  <tbody class="[&_tr]:border-b [&_tr]:border-[#2a2823] [&_tr:last-child]:border-0">
+                    <tr class="bg-[#4f4b42]/40">
+                      <td class="audit-mock__td text-[#c9c5bb]">2026/10/05 02:32pm</td>
+                      <td class="audit-mock__td"><span class="audit-mock__chip bg-orange-500/20 text-orange-600">UPDATE</span></td>
+                      <td class="audit-mock__td hidden sm:table-cell">ana@empresa.com</td>
+                      <td class="audit-mock__td hidden sm:table-cell">Deployment</td>
+                      <td class="audit-mock__td">api</td>
+                      <td class="audit-mock__td hidden sm:table-cell">payments</td>
+                    </tr>
+                    <tr>
+                      <td class="audit-mock__td text-[#c9c5bb]">2026/10/05 01:05pm</td>
+                      <td class="audit-mock__td"><span class="audit-mock__chip bg-red-500/20 text-red-600">DELETE</span></td>
+                      <td class="audit-mock__td hidden sm:table-cell">ci-deployer</td>
+                      <td class="audit-mock__td hidden sm:table-cell">Secret</td>
+                      <td class="audit-mock__td">db-creds</td>
+                      <td class="audit-mock__td hidden sm:table-cell">payments</td>
+                    </tr>
+                    <tr>
+                      <td class="audit-mock__td text-[#c9c5bb]">2026/10/05 11:47am</td>
+                      <td class="audit-mock__td"><span class="audit-mock__chip bg-green-500/20 text-green-600">CREATE</span></td>
+                      <td class="audit-mock__td hidden sm:table-cell">joao@empresa.com</td>
+                      <td class="audit-mock__td hidden sm:table-cell">ConfigMap</td>
+                      <td class="audit-mock__td">feature-flags</td>
+                      <td class="audit-mock__td hidden sm:table-cell">payments</td>
+                    </tr>
+                    <tr>
+                      <td class="audit-mock__td text-[#c9c5bb]">2026/10/05 10:22am</td>
+                      <td class="audit-mock__td"><span class="audit-mock__chip bg-orange-500/20 text-orange-600">UPDATE</span></td>
+                      <td class="audit-mock__td hidden sm:table-cell">kubernetes-admin</td>
+                      <td class="audit-mock__td hidden sm:table-cell">Ingress</td>
+                      <td class="audit-mock__td">web</td>
+                      <td class="audit-mock__td hidden sm:table-cell">payments</td>
+                    </tr>
+                    <tr>
+                      <td class="audit-mock__td text-[#c9c5bb]">2026/10/05 09:18am</td>
+                      <td class="audit-mock__td"><span class="audit-mock__chip bg-green-500/20 text-green-600">CREATE</span></td>
+                      <td class="audit-mock__td hidden sm:table-cell">ci-deployer</td>
+                      <td class="audit-mock__td hidden sm:table-cell">Job</td>
+                      <td class="audit-mock__td">migrate-db</td>
+                      <td class="audit-mock__td hidden sm:table-cell">payments</td>
+                    </tr>
+                    <tr>
+                      <td class="audit-mock__td text-[#c9c5bb]">2026/10/05 08:41am</td>
+                      <td class="audit-mock__td"><span class="audit-mock__chip bg-red-500/20 text-red-600">DELETE</span></td>
+                      <td class="audit-mock__td hidden sm:table-cell">ana@empresa.com</td>
+                      <td class="audit-mock__td hidden sm:table-cell">Pod</td>
+                      <td class="audit-mock__td">api-7d9f4-x2kqp</td>
+                      <td class="audit-mock__td hidden sm:table-cell">payments</td>
+                    </tr>
+                    <tr>
+                      <td class="audit-mock__td text-[#c9c5bb]">2026/10/05 08:03am</td>
+                      <td class="audit-mock__td"><span class="audit-mock__chip bg-orange-500/20 text-orange-600">UPDATE</span></td>
+                      <td class="audit-mock__td hidden sm:table-cell">joao@empresa.com</td>
+                      <td class="audit-mock__td hidden sm:table-cell">Service</td>
+                      <td class="audit-mock__td">api</td>
+                      <td class="audit-mock__td hidden sm:table-cell">payments</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Overlay do Sheet -->
+              <div class="hidden sm:block absolute inset-0 bg-black/40"></div>
+
+              <!-- Sheet de detalhes aberto ao clicar na linha -->
+              <div class="hidden sm:flex absolute inset-y-0 right-0 w-[44%] flex-col gap-2 border-l border-[#2a2823] bg-[#141311] p-3 shadow-[-12px_0_24px_rgba(0,0,0,0.45)]">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="text-[13px] font-semibold">api</div>
+                    <div class="text-[#87806f]">Namespace: payments</div>
+                  </div>
+                  <i data-lucide="x" class="h-3.5 w-3.5 text-[#87806f]"></i>
+                </div>
+                <div class="audit-mock__card">
+                  <div class="font-semibold mb-1.5">Info</div>
+                  <p><strong>User:</strong> ana@empresa.com</p>
+                  <p><strong>Verb:</strong> UPDATE</p>
+                  <p><strong>GVK:</strong> apps/v1, Kind=Deployment</p>
+                </div>
+                <div class="audit-mock__card">
+                  <div class="font-semibold mb-1.5">Changes</div>
+                  <p>Operation: replace</p>
+                  <p>Path: <span class="font-mono">/spec/replicas</span></p>
+                  <p>Value: <span class="font-mono text-[#eab308]">5</span></p>
+                </div>
+                <div class="audit-mock__card">
+                  <div class="font-semibold mb-1.5">Source IP</div>
+                  <p class="font-mono">10.0.12.4</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-1 md:order-1 flex flex-col gap-4">
+            <h3 class="text-2xl md:text-4xl font-semibold text-gray-100 mb-2" data-i18n="features_showcase.audit_title">Auditoria</h3>
+            <p class="text-gray-300 mb-4 text-xl leading-tight font-light text-justify" data-i18n="features_showcase.audit_description">
+              Saiba quem alterou o quê, quando e de onde. O Gita registra as operações realizadas no cluster com usuário, verbo, recurso, namespace e IP de origem, e mostra exatamente quais valores foram modificados em cada mudança.
+            </p>
+            <div class="grid grid-cols-[30px_1fr] text-gray-300 gap-y-2">
+              <i data-lucide="circle-check" class="h-6 w-6 text-orange-500"></i>
+              <div data-i18n="features_showcase.audit_who" class="text-lg">Usuário, grupos e IP de origem de cada operação</div>
+              <i data-lucide="circle-check" class="h-6 w-6 text-orange-500"></i>
+              <div data-i18n="features_showcase.audit_diff" class="text-lg">Detalhe de cada alteração: operação, caminho e valor</div>
+              <i data-lucide="circle-check" class="h-6 w-6 text-orange-500"></i>
+              <div data-i18n="features_showcase.audit_filters" class="text-lg">Filtros por namespace, recurso, verbo, usuário e período</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

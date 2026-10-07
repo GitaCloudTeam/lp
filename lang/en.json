@@ -86,6 +86,11 @@
     "features_showcase.ack_title": "ACK",
     "features_showcase.ack_description": "Streamline incident response with the ACK system. Allow your team to acknowledge alerts, preventing duplicate notifications and optimizing communication for faster resolution.",
     "features_showcase.ack_benefit": "Improved Resolution Time",
+    "features_showcase.audit_title": "Audit",
+    "features_showcase.audit_description": "Know who changed what, when and from where. Gita records the operations performed in the cluster with user, verb, resource, namespace and source IP, and shows exactly which values were modified in each change.",
+    "features_showcase.audit_who": "User, groups and source IP for every operation",
+    "features_showcase.audit_diff": "Details of every change: operation, path and value",
+    "features_showcase.audit_filters": "Filter by namespace, resource, verb, user and time range",
 
     "pricing.title": "Start using GITA today",
     "pricing.subtitle": "Simple, transparent, and scalable. Choose the plan that best suits your needs.",
