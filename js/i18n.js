@@ -5,7 +5,7 @@ async function setLanguage(lang, isHomePage = false) {
     });
 
     try {
-      const response = await fetch(`./lang/${lang}.json`);
+      const response = await fetch(`./lang/${lang}.json${window.LANG_VERSION ? `?v=${window.LANG_VERSION}` : ""}`);
       const translations = await response.json();
 
       document.querySelectorAll("[data-i18n]").forEach((el) => {
